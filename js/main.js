@@ -33,6 +33,23 @@
 	var fieldHtml = requiredFields.map(function (f) { // uses native array map.  Won't work in new browsers
 		return Mustache.render(template, {field: f });
 	}).join('');
+
+
+	$("body").on("blur", "input", function (ev) {
+		var input = $(ev.currentTarget);
+		var name = input.attr("name");
+		var val = input.val();
+		localStorage.setItem(name, val);
+	});
+
+	$("#ls-load").on('click', function (ev) {
+		ev.preventDefault();
+		Object.keys(localStorage).forEach(function (k) {
+			$("form input[name='" + k +"']").val(localStorage.getItem(k));
+		});
+	});
+
+
 	var form  = $("#form");
 	form.prepend(fieldHtml);
 	form.on('submit', function (ev) {
