@@ -23,16 +23,16 @@ h1 {
   background-position: top center;
   z-index: -1;
 }
-#sidebar {
+.sidebar {
   background: white;
   position: absolute;
   top: 0;
   height: 100%;
-  width: 400px;
+  width: 300px;
   border-right: 2px solid #8FB693;
   z-index: 1;
   transform: translateX(-100%);
-  transition: transform .5s linear;
+  transition: transform .3s linear;
 
   &.open {
     transform: translateX(0);
@@ -41,27 +41,38 @@ h1 {
   .sidebar-inner {
   	max-height: 100%;
   	overflow-y: auto;
+    padding: 10px 20px;
+  }
+  &.right {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+    border-right: 0;
+    border-left: 2px solid #8fb693;
+  }
+
+  .sidebar-handle {
+    cursor: pointer;
+    background: none repeat scroll 0% 0% #FFF;
+    border: 2px solid #8FB693;
+    border-top: 0;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 40px;
+    right: -78px;
+    text-align: center;
+    line-height: 40px;
+    transform: rotate(-90deg);
   }
 }
-#handle {
-  cursor: pointer;
-  background: none repeat scroll 0% 0% #FFF;
-  border: 2px solid #8FB693;
-  border-top: 0;
-  border-bottom-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  width: 100px;
-  height: 50px;
-  position: absolute;
-  top: 40px;
-  right: -78px;
-  text-align: center;
-  line-height: 40px;
-  transform: rotate(-90deg);
+body.open .sidebar {
+  transform: translateX(0);
 }
 
 #form {
-	padding: 10px 20px;
 }
 .form-field {
 	margin-bottom: 5px;

@@ -240,25 +240,33 @@ h1 {
   background-position: top center;
   z-index: -1;
 }
-#sidebar {
+.sidebar {
   background: white;
   position: absolute;
   top: 0;
   height: 100%;
-  width: 400px;
+  width: 300px;
   border-right: 2px solid #8FB693;
   z-index: 1;
   transform: translateX(-100%);
-  transition: transform .5s linear;
+  transition: transform .3s linear;
 }
-#sidebar.open {
+.sidebar.open {
   transform: translateX(0);
 }
-#sidebar .sidebar-inner {
+.sidebar .sidebar-inner {
   max-height: 100%;
   overflow-y: auto;
+  padding: 10px 20px;
 }
-#handle {
+.sidebar.right {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+  border-right: 0;
+  border-left: 2px solid #8fb693;
+}
+.sidebar .sidebar-handle {
   cursor: pointer;
   background: none repeat scroll 0% 0% #FFF;
   border: 2px solid #8FB693;
@@ -274,8 +282,8 @@ h1 {
   line-height: 40px;
   transform: rotate(-90deg);
 }
-#form {
-  padding: 10px 20px;
+body.open .sidebar {
+  transform: translateX(0);
 }
 .form-field {
   margin-bottom: 5px;
