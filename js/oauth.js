@@ -502,6 +502,7 @@ OAuth.setProperties(OAuth.SignatureMethod, // class members
     }
 ,
     normalizeParameters: function normalizeParameters(parameters) {
+        log('normalize', parameters);
         if (parameters == null) {
             return "";
         }
