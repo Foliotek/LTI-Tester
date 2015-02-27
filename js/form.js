@@ -56,16 +56,34 @@
 
 			var postData = OAuth.SignatureMethod.normalizeParameters(message.parameters) + 
 							'&oauth_signature=' + OAuth.getParameter(message.parameters, "oauth_signature");
-			log('Here', postData, message.action);
-			$.ajax({
-				url: message.action,
-				type: 'POST',
-				data: postData,
-				processData: false,
-				success: function (resp) {
-					log (resp);
-				}
+
+			var formTemplate = '<form methd="{{method}}" action="{{{action}}}" target="{{target}}" enctype="application/x-www-form-urlencoded">'
+			+ '{{#fields}}<input type="hidden" name="{{name}}" value="{{val}}" />{{/fields}}'
+			+ '</form>';
+
+			var formHtml = Mustache.render(formTemplate, {
+				method: 'POST',
+				action: message.action,
+				target: 'LaunchFrame',
+				fields: OAuth.getParameterList(message.parameters).map(function(f) {
+					return {
+						name: f[0],
+						val: f[1]
+					};
+				})
 			});
+
+			var formEl = $(formHtml).appendTo("body");
+			formEl.submit();
+			// $.ajax({
+			// 	url: message.action,
+			// 	type: 'POST',
+			// 	data: postData,
+			// 	processData: false,
+			// 	success: function (resp) {
+			// 		log (resp);
+			// 	}
+			// });
 		});
 	}
 
