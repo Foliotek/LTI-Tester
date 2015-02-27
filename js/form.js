@@ -82,6 +82,9 @@
 
 			var formEl = $(formHtml).appendTo("body");
 			formEl.submit();
+			setTimeout(function (){
+				formEl.remove();
+			}, 1000)
 			$("body").removeClass('open');
 		});
 	}
