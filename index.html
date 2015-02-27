@@ -19,6 +19,7 @@
 			<div class="sidebar-handle">config</div>
             <div class="sidebar-inner">
     			<form id="form">
+					<button type="button" id="add">add</button>
                 	<button type="submit">Do this thang</button>
             	</form>
                 <a href="#" id="ls-load">Load from LS</a>
@@ -42,6 +43,12 @@
             <label>{{field}}</label>
             <input type="text" name="{{field}}" />
             </div>
+        </script>
+		<script type="text/template" id="form-add-template">
+			<div class="form-field">
+            <input class="custom_field" type="text" />
+            <input class="custom_value" type="text" name="" />
+			</div>
         </script>
         <!-- End Templates -->
 
