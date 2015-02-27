@@ -7,8 +7,4 @@
 
 	app.form.init();
 	app.debug.init($("#form"));
-
-	$("#LaunchFrame").on('load', function (ev) {
-		$(this).addClass('loaded');
-	});
 })();

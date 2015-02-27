@@ -43,7 +43,7 @@
             <p>Enter your data in the configuration on the left, and click the button to begin</p>
         </div>
 
-		<iframe id="LaunchFrame" name="LaunchFrame" width="100%" srolling="auto" frameborder="1" transparency></iframe>
+		
 
         <!-- Templates -->
         <script type="text/template" id="form-field-template">
@@ -57,6 +57,9 @@
             <input class="custom_field" type="text" value="{{field}}" />
             <input class="custom_value" type="text" name="{{field}}" />
 			</div>
+        </script>
+        <script type="text/template" id="iframe-template">
+            <iframe id="LaunchFrame" name="LaunchFrame" class="LaunchFrame" width="100%" srolling="auto" frameborder="1" transparency></iframe>
         </script>
         <!-- End Templates -->
 

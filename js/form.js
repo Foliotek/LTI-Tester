@@ -80,10 +80,23 @@
 				})
 			});
 
+			var existing = $("#LaunchFrame");
+			var newIframe = $($("#iframe-template").html());
+			if (existing.length) {
+				existing.replaceWith(newIframe);
+			}
+			else {
+				$("body").append(newIframe);
+			}
+			
+			newIframe.on('load', function() {
+				newIframe.addClass('loaded');
+			});
+
 			var formEl = $(formHtml).appendTo("body");
 			formEl.submit();
 			$("body").removeClass('open');
-			setTimeout(function (){
+			setTimeout(function () {
 				formEl.remove();
 			}, 1000);
 		});
