@@ -69,6 +69,7 @@
 
 		formValues['oauth_nonce'] = OAuth.nonce(10);
 		formValues['oauth_timestamp'] = OAuth.timestamp();
+		formValues['oauth_version'] = '1.0';
 		delete formValues['secret'];
 		delete formValues['endpoint'];
 		var formString = Object.keys(formValues).map(function(k) { return k + '=' + formValues[k]; }).join('&');
