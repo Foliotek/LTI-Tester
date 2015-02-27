@@ -25,10 +25,13 @@
 		}).join('');
 		$form.prepend(fieldHtml);
 	}
-	function renderAdd($form) {
+	function renderAdd($form, field) {
 		var template = $("#form-add-template").html();
-		$form.find("#add").before(template);
-		
+		var html = Mustache.render(template, {
+			field: field
+		});
+		var field = $(html).insertBefore($form.find("#add"));
+		return field;
 	}
 	function bindSubmit ($form) {
 		$form.on('submit', function (ev) {
@@ -83,7 +86,7 @@
 	}
 
 	function bindLocalStorage ($form) {
-		$form.on("blur", "input", function (ev) {
+		$form.on("blur", "input[name]", function (ev) {
 			var input = $(ev.currentTarget);
 			var name = input.attr("name");
 			var val = input.val();
@@ -92,6 +95,12 @@
 
 		$("#ls-load").on('click', function (ev) {
 			ev.preventDefault();
+
+			var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
+			custom_fields.forEach(function (f) {
+				renderAdd($form, f);
+			});
+
 			Object.keys(localStorage).forEach(function (k) {
 				$form.find("input[name='" + k +"']").val(localStorage.getItem(k)).trigger("change");
 			});
@@ -103,7 +112,11 @@
 			renderAdd($form);
 		})
 		
-		$form.on("change", ".custom_field", function() {
+		$form.on("change", ".custom_field", function () {
+			var customFields = $form.find(".custom_field").map(function(f, i) {
+				return $(i).val();
+			}).toArray();
+			localStorage.setItem('tester_custom_fields', customFields.join(','));
 			$(this).next().attr("name", $(this).val());
 		});
 		
