@@ -25,7 +25,11 @@
 		}).join('');
 		$form.prepend(fieldHtml);
 	}
-
+	function renderAdd($form) {
+		var template = $("#form-add-template").html();
+		$form.find("#add").before(template);
+		
+	}
 	function bindSubmit ($form) {
 		$form.on('submit', function (ev) {
 			ev.preventDefault();
@@ -99,6 +103,16 @@
 		var $form = $("#form");
 		render($form);
 		bindSubmit($form);
+		
+		$("#add").on('click', function(ev) {
+			renderAdd($form);		
+		});
+		
+		
+		$form.on("change", ".custom_field", function() {
+			$(this).next().attr("name", $(this).val());
+		});
+		
 		bindLocalStorage($form);
 	};
 
