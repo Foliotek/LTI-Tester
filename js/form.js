@@ -56,7 +56,7 @@
 			// var postData = OAuth.SignatureMethod.normalizeParameters(message.parameters) + 
 			// 				'&oauth_signature=' + OAuth.getParameter(message.parameters, "oauth_signature");
 
-			var formTemplate = '<form methd="{{method}}" action="{{{action}}}" target="{{target}}" '
+			var formTemplate = '<form method="{{method}}" action="{{{action}}}" target="{{target}}" '
 			+ 'enctype="application/x-www-form-urlencoded">'
 			+ '{{#fields}}<input type="hidden" name="{{name}}" value="{{val}}" />{{/fields}}'
 			+ '</form>';
