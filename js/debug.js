@@ -37,7 +37,7 @@
 	}
 
 	function init ($form) {
-		$form.on('keyup', 'input', $.throttle(1000, inputChange));
+		$form.on('change', 'input', $.throttle(1000, inputChange));
 	}
 
 	app.debug = {};

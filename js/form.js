@@ -93,7 +93,7 @@
 		$("#ls-load").on('click', function (ev) {
 			ev.preventDefault();
 			Object.keys(localStorage).forEach(function (k) {
-				$form.find("input[name='" + k +"']").val(localStorage.getItem(k));
+				$form.find("input[name='" + k +"']").val(localStorage.getItem(k)).trigger("change");
 			});
 		});
 	}
