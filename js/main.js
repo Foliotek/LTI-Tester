@@ -3,13 +3,17 @@
 
 	var requiredFields = [
 		'endpoint',
-		'key',
+		'oauth_consumer_key',
 		'secret',
 		'resource_link_id',
 		'resource_link_title',
 		'resource_link_description',
 		'user_id',
 		'roles',
+		'lis_person_name_full',
+		'lis_person_name_family',
+		'lis_person_name_given',
+		'lis_person_contact_email_primary',
 		'lis_person_sourcedid',
 		'context_id',
 		'context_title',
