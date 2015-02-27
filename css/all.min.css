@@ -218,7 +218,11 @@ textarea {
     page-break-after: avoid;
   }
 }
+html {
+  height: 100%;
+}
 body {
+  min-height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
@@ -262,7 +266,7 @@ pre {
 .sidebar .sidebar-inner {
   max-height: 100%;
   overflow-y: auto;
-  padding: 10px 20px;
+  padding: 0 20px;
 }
 .sidebar.right {
   left: auto;
@@ -323,7 +327,7 @@ body.open .sidebar {
   width: 550px;
   margin: 0 auto;
   text-align: center;
-  margin-top: 10%;
+  padding-top: 10%;
   font-size: 1.4em;
   font-weight: 300;
 }
