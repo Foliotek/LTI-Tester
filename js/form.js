@@ -97,22 +97,25 @@
 			});
 		});
 	}
-
-	app.form = {};
-	app.form.init = function () {
-		var $form = $("#form");
-		render($form);
-		bindSubmit($form);
-		
-		$("#add").on('click', function(ev) {
-			renderAdd($form);		
-		});
-		
+	
+	function bindAdd ($form) {
+		$form.on("click", "#add", function(){
+			renderAdd($form);
+		})
 		
 		$form.on("change", ".custom_field", function() {
 			$(this).next().attr("name", $(this).val());
 		});
 		
+	}
+
+	app.form = {};
+	app.form.init = function () {
+		var $form = $("#form");
+		render($form);
+		
+		bindSubmit($form);		
+		bindAdd($form);
 		bindLocalStorage($form);
 	};
 
