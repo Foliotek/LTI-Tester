@@ -269,3 +269,22 @@ h1 {
   line-height: 40px;
   transform: rotate(-90deg);
 }
+#form {
+  padding: 10px 20px;
+}
+.form-field {
+  margin-bottom: 5px;
+}
+.form-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+.form-field input[type='text'] {
+  width: 70%;
+  border: 1px solid #bbbbbb;
+  font-size: 14px;
+  font-family: sans-serif;
+  padding: 5px;
+}
