@@ -228,6 +228,7 @@ body {
   font-family: sans-serif;
   font-weight: 300;
   background: white;
+  overflow: hidden;
 }
 h1 {
   font-weight: 300;
@@ -309,6 +310,9 @@ body.open .sidebar {
   font-size: 14px;
   font-family: sans-serif;
   padding: 5px;
+}
+.form-field .custom_field {
+  margin: 10px 0;
 }
 #LaunchFrame {
   position: fixed;
