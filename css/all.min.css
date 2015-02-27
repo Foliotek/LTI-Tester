@@ -219,9 +219,53 @@ textarea {
   }
 }
 body {
+  padding: 0;
+  margin: 0;
   font-family: sans-serif;
   font-weight: 300;
+  background: white;
 }
 h1 {
   font-weight: 300;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background: url("http://foliotek.github.io/images/home-bg.jpg");
+  background-size: cover;
+  background-position: top center;
+  z-index: -1;
+}
+#sidebar {
+  background: white;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 400px;
+  border-right: 2px solid #8FB693;
+  transform: translateX(-100%);
+  transition: transform .5s linear;
+}
+#sidebar.open {
+  transform: translateX(0);
+}
+#handle {
+  cursor: pointer;
+  background: none repeat scroll 0% 0% #FFF;
+  border: 2px solid #8FB693;
+  border-top: 0;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 40px;
+  right: -78px;
+  text-align: center;
+  line-height: 40px;
+  transform: rotate(-90deg);
 }
