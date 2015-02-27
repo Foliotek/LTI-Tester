@@ -38,26 +38,26 @@
 				action: formValues['endpoint']
 			};
 
+			delete formValues['secret'];
+			delete formValues['endpoint'];
 			formValues['oauth_nonce'] = OAuth.nonce(10);
 			formValues['oauth_timestamp'] = OAuth.timestamp();
 			formValues['oauth_version'] = '1.0';
-			delete formValues['secret'];
-			delete formValues['endpoint'];
 			var formString = Object.keys(formValues).map(function(k) { return k + '=' + formValues[k]; }).join('&');
-			log("Foliotek's: " + formString);
-			log("Foliotek's: ", message);
 			message.parameters = OAuth.decodeForm(formString);
-
 			OAuth.SignatureMethod.sign(message, key);
-			log("normalizedParameters", OAuth.SignatureMethod.normalizeParameters(message.parameters));
-			log("signatureBaseString" , OAuth.SignatureMethod.getBaseString(message));
-			log("signature"           , OAuth.getParameter(message.parameters, "oauth_signature"));
-			log("authorizationHeader" , OAuth.getAuthorizationHeader("", message.parameters));
 
-			var postData = OAuth.SignatureMethod.normalizeParameters(message.parameters) + 
-							'&oauth_signature=' + OAuth.getParameter(message.parameters, "oauth_signature");
+			// log("Foliotek's: " + formString);
+			// log("Foliotek's: ", message);
+			// log("normalizedParameters", OAuth.SignatureMethod.normalizeParameters(message.parameters));
+			// log("signatureBaseString" , OAuth.SignatureMethod.getBaseString(message));
+			// log("signature"           , OAuth.getParameter(message.parameters, "oauth_signature"));
+			// log("authorizationHeader" , OAuth.getAuthorizationHeader("", message.parameters));
+			// var postData = OAuth.SignatureMethod.normalizeParameters(message.parameters) + 
+			// 				'&oauth_signature=' + OAuth.getParameter(message.parameters, "oauth_signature");
 
-			var formTemplate = '<form methd="{{method}}" action="{{{action}}}" target="{{target}}" enctype="application/x-www-form-urlencoded">'
+			var formTemplate = '<form methd="{{method}}" action="{{{action}}}" target="{{target}}" '
+			+ 'enctype="application/x-www-form-urlencoded">'
 			+ '{{#fields}}<input type="hidden" name="{{name}}" value="{{val}}" />{{/fields}}'
 			+ '</form>';
 
@@ -75,15 +75,6 @@
 
 			var formEl = $(formHtml).appendTo("body");
 			formEl.submit();
-			// $.ajax({
-			// 	url: message.action,
-			// 	type: 'POST',
-			// 	data: postData,
-			// 	processData: false,
-			// 	success: function (resp) {
-			// 		log (resp);
-			// 	}
-			// });
 		});
 	}
 

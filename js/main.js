@@ -13,4 +13,9 @@
 	});
 
 	app.form.init();
+
+	$("#LaunchFrame").on('load', function (ev) {
+		$(this).addClass('loaded');
+		log($(this));
+	});
 })();
