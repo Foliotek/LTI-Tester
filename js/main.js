@@ -67,6 +67,8 @@
 			action: formValues['endpoint']
 		};
 
+		formValues['oauth_nonce'] = OAuth.nonce(10);
+		formValues['oauth_timestamp'] = OAuth.timestamp();
 		delete formValues['secret'];
 		delete formValues['endpoint'];
 		var formString = Object.keys(formValues).map(function(k) { return k + '=' + formValues[k]; }).join('&');
@@ -79,6 +81,19 @@
 		log("signatureBaseString" , OAuth.SignatureMethod.getBaseString(message));
 		log("signature"           , OAuth.getParameter(message.parameters, "oauth_signature"));
 		log("authorizationHeader" , OAuth.getAuthorizationHeader("", message.parameters));
+
+		var postData = OAuth.SignatureMethod.normalizeParameters(message.parameters) + 
+						'&oauth_signature=' + OAuth.getParameter(message.parameters, "oauth_signature");
+		log('Here', postData, message.action);
+		$.ajax({
+			url: message.action,
+			type: 'POST',
+			data: postData,
+			processData: false,
+			success: function (resp) {
+				log (resp);
+			}
+		});
 	});
 })();
 
