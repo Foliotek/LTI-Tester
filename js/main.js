@@ -2,18 +2,18 @@
 	"use strict";
 
 	var requiredFields = [
-		'url',
+		'endpoint',
 		'key',
 		'secret',
-		'resourceLinkId',
-		'resourceLinkTitle',
-		'resourceLinkDescription',
-		'userId',
+		'resource_link_id',
+		'resource_link_title',
+		'resource_link_description',
+		'user_id',
 		'roles',
-		'sourcedId',
-		'contextId',
-		'contextTitle',
-		'contextLabel'
+		'lis_person_sourcedid',
+		'context_id',
+		'context_title',
+		'context_label'
 	];
 
 	var template = $("#form-field-template").html();
