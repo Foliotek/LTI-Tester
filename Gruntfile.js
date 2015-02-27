@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 
 		watch: {
 			evrthing: {
-				files: ['./css/*.less'] //, './js/*.js'],
+				files: ['./css/*.less'], //, './js/*.js'],
 				tasks: ['less']
 			},
 		}, 
