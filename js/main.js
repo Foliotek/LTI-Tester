@@ -1,0 +1,7 @@
+(function () {
+
+	log("herasdfe");
+	$(function() {
+
+	});
+})();
