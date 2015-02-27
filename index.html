@@ -16,10 +16,25 @@
     <body>
         <h1>Welcome to the LTI Tester</h1>
         
+        <form id="form">
 
+            <button type="submit">Do this thang</button>
+        </form>
 
+        <!-- Templates -->
+        <script type="text/template" id="form-field-template">
+            <div class="form-field">
+            <label>{{field}}</label>
+            <input type="text" name="{{field}}" />
+            </div>
+        </script>
+        <!-- End Templates -->
+
+        <!-- Bower Components -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+        <script src="bower_components/mustache/mustache.min.js"></script>
+        <!-- End Bower -->
 
         <script src="js/common.js"></script>
         <script src="js/main.js"></script>
