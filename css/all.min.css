@@ -228,6 +228,11 @@ body {
 h1 {
   font-weight: 300;
 }
+pre {
+  background: #ddd;
+  white-space: normal;
+  word-break: break-all;
+}
 #bg {
   position: fixed;
   top: 0;
