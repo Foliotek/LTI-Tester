@@ -26,14 +26,20 @@
 			}
 			return Mustache.render(template, f);
 		}).join('');
-		$form.prepend(fieldHtml);
+		$form.append(fieldHtml);
 	}
 	function renderAdd($form, field) {
+		var scroll = field === undefined;
 		var template = $("#form-add-template").html();
 		var html = Mustache.render(template, {
 			field: field
 		});
-		var field = $(html).insertBefore($form.find("#add"));
+		var field = $(html).insertAfter($form.find(".form-field:last"));
+		//TODO: FIX SCROLL
+		if(scroll){
+			//log("here");
+			$form.scrollTo(".form-field:last");
+		}
 		return field;
 	}
 	function newOauth($form) {
@@ -190,7 +196,8 @@
 			renderAdd($form);
 		})
 		
-		$form.on("change", ".custom_field", function () {
+		$form.on("change", ".custom_field"
+				 , function () {
 			var customFields = $form.find(".custom_field").map(function(f, i) {
 				return $(i).val();
 			}).toArray();
