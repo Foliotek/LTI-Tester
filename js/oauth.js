@@ -365,6 +365,7 @@ OAuth.setProperties(OAuth.SignatureMethod.prototype, // instance members
     /** Add a signature to the message. */
     sign: function sign(message) {
         var baseString = OAuth.SignatureMethod.getBaseString(message);
+        log('signing baseString', baseString);
         var signature = this.getSignature(baseString);
         OAuth.setParameter(message, "oauth_signature", signature);
         return signature; // just in case someone's interested
@@ -394,6 +395,7 @@ OAuth.setProperties(OAuth.SignatureMethod.prototype, // instance members
 OAuth.setProperties(OAuth.SignatureMethod, // class members
 {
     sign: function sign(message, accessor) {
+        log("signing", JSON.stringify(message.parameters));
         var name = OAuth.getParameterMap(message.parameters).oauth_signature_method;
         if (name == null || name == "") {
             name = "HMAC-SHA1";

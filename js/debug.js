@@ -2,36 +2,29 @@
 	var $sig = $("#debug-signature");
 	var $sigBase = $("#debug-signature-base");
 
-
-	function processForm($form) {
+	function processForm ($form) {
 		var formObj = $form.serializeObject();
-		var key = {
-			consumerSecret: formObj.secret
-		};
-		var msg = {
-			method: 'POST',
-			action: formObj.endpoint
-		};
-
-		delete formObj['secret'];
+		var secret = formObj['secret'];
+		var endpoint = formObj['endpoint'];
+		delete formObj['secret']; 
 		delete formObj['endpoint'];
-		formObj['oauth_nonce'] = OAuth.nonce(10);
-		formObj['oauth_timestamp'] = OAuth.timestamp();
-		formObj['oauth_version'] = '1.0';
-		msg.parameters = Object.keys(formObj).map(function (k) {
-			return [OAuth.decodePercent(k), OAuth.decodePercent(formObj[k] + '')];
+
+		var req = new OAuthRequest({
+			method: 'POST',
+			action: endpoint,
+			parameters: formObj
 		});
-		OAuth.SignatureMethod.sign(msg, key);
+
 		return {
-			signatureBase: OAuth.SignatureMethod.getBaseString(msg),
-			signature: OAuth.getParameter(msg.parameters, "oauth_signature")
-		}
+			signatureBase: req.getSignatureBase(),
+			signature: req.getSignature(secret)
+		};
 	}
 
 	function inputChange(ev) {
 		var target = $(ev.currentTarget);
 		var form = target.closest('form');
-		var data = processForm(form);
+		 var data = processForm(form);
 		$sig.html(data.signature);
 		$sigBase.html(data.signatureBase);
 	}
