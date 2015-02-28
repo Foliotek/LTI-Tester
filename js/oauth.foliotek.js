@@ -1,4 +1,5 @@
-// dependency sha1.js
+// dependencies sha1.js
+// Heavily influenced by Netflix's oauth code on Google Code.  TODO Get Link
 (function () {
 	var OAUTH_VERSION = "1.0";
 	var NONCE_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
