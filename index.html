@@ -49,7 +49,7 @@
         <script type="text/template" id="form-field-template">
             <div class="form-field">
             <label>{{field}}</label>
-            <input type="text" name="{{field}}" />
+            <input type="text" name="{{field}}" {{#required}}required{{/required}} />
             </div>
         </script>
 		<script type="text/template" id="form-add-template">

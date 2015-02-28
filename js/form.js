@@ -1,8 +1,8 @@
 (function (app){
 	var requiredFields = [
-		'endpoint',
-		'oauth_consumer_key',
-		'secret',
+		{ field: 'endpoint', required: true },
+		{ field: 'oauth_consumer_key', required: true },
+		{ field: 'secret', required: true },
 		'resource_link_id',
 		'resource_link_title',
 		'resource_link_description',
@@ -21,7 +21,10 @@
 	function render ($form) {
 		var template = $("#form-field-template").html();
 		var fieldHtml = requiredFields.map(function (f) { // uses native array map.  Won't work in new browsers
-			return Mustache.render(template, {field: f });
+			if (typeof(f) === 'string') {
+				f = { field: f };
+			}
+			return Mustache.render(template, f);
 		}).join('');
 		$form.prepend(fieldHtml);
 	}
