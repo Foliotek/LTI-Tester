@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+        <link rel="favicon" href="http://foliotek.github.io/favico-64.png">
 
         <link rel="stylesheet" href="css/all.min.css">
         <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
@@ -63,24 +63,18 @@
         </script>
         <!-- End Templates -->
 
-        <!-- Bower Components -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
-        <script src="bower_components/mustache/mustache.min.js"></script>
-        <!-- End Bower -->
-
-        <!-- Oauth -->
-        <script src="js/sha1.js"></script>
-        <!--<script src="js/oauth.js"></script>-->
-        <script src="js/oauth.foliotek.js"></script>
-        <!-- End OAuth -->
-
         <script>
             var app = {};
         </script>
+        <!-- build:js ./dist/js/all.min.js -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/mustache/mustache.min.js"></script>
+        <script src="js/sha1.js"></script>
+        <script src="js/oauth.foliotek.js"></script>
         <script src="js/common.js"></script>
         <script src="js/form.js"></script>
         <script src="js/debug.js"></script>
         <script src="js/main.js"></script>
+        <!-- endbuild -->
     </body>
 </html>
