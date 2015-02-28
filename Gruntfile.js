@@ -67,6 +67,9 @@ module.exports = function (grunt) {
 				tasks: ['less:development']
 			},
 		}, 
+		clean: {
+			all: ['dist']
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-connect');
@@ -86,6 +89,7 @@ module.exports = function (grunt) {
 		'watch']);
 
 	grunt.registerTask('prod', [
+		'clean',
 		'copy',
 		'useminPrepare', 
 		'concat:generated',
