@@ -33,6 +33,36 @@
   }
 })();
 
+(function() {
+  window.parseUri = function (u) {
+    var parser = document.createElement('a');
+    parser.href = u;
+
+    var query = {};
+    if (parser.search) {
+      parser.search.substring(1).split('&').forEach(function (s) {
+        var r = s.split('=');
+        query[decodeURIComponent(r[0])] = decodeURIComponent(r[1]);
+      });
+    }
+
+    return {
+      protocol: parser.protocol,
+      protocol: parser.protocol,
+      hostname: parser.hostname,
+      port:     parser.port,
+      pathname: parser.pathname,
+      search:   parser.search,
+      hash:     parser.hash,
+      host:     parser.host,
+      query:    query
+    };
+  };
+})();
+
+
+/* Jquery Plugins */
+
 $.fn.serializeObject = function() {
   var o = {};
   var a = this.serializeArray();

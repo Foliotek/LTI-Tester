@@ -28,8 +28,6 @@
 		}).join('');
 		$form.append(fieldHtml);
 		
-		
-		
 		$("#ls-clear").on('click', function (ev) {
 			$form.find("input[type=text]").each(function(){
 				
