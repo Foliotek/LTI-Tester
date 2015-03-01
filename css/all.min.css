@@ -299,7 +299,7 @@ body.open .sidebar {
   transform: translateX(0);
 }
 #form {
-  padding-top: 75px;
+  padding-top: 90px;
 }
 .form-field {
   margin-bottom: 5px;
@@ -362,6 +362,7 @@ body.open .sidebar {
   white-space: nowrap;
   display: inline;
   background: red;
+  height: 30px;
 }
 .fix-top .btn-group button {
   font-family: sans-serif;
@@ -373,7 +374,7 @@ body.open .sidebar {
   border: 0 none;
   border-right: 2px solid #bbbbbb;
   display: inline-block;
-  padding: .5em 1.25em;
+  padding: .8em 1.25em;
   color: white;
   outline: none;
   transition: all 0.3s ease 0s;
@@ -386,7 +387,21 @@ body.open .sidebar {
   border-right: 0 none;
   color: #8FB693;
 }
-.fix-top .btn-group button:hover {
-  background: none repeat scroll 0 0 #bbbbbb;
+.fix-top .btn-group button .text-hide {
+  display: none;
+}
+.fix-top .btn-group:hover button {
+  width: 10%;
+  text-align: center;
+  padding: .8em 0;
+}
+.fix-top .btn-group:hover button:hover {
+  background: #bbbbbb;
   color: #444444;
+  width: 70%;
+  text-align: left;
+  padding: .8em 1.25em;
+}
+.fix-top .btn-group:hover button:hover .text-hide {
+  display: inline;
 }

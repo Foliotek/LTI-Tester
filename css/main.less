@@ -86,7 +86,7 @@ body.open .sidebar {
 }
 
 #form {
-	padding-top: 75px;
+	padding-top: 90px;
 }
 .form-field {
 	margin-bottom: 5px;
@@ -153,6 +153,8 @@ body.open .sidebar {
 		white-space: nowrap;
 		display: inline;
 		background:red;
+		height:30px;
+		
 		button {
 			font-family: sans-serif;
 			font-size: 14px;
@@ -163,7 +165,7 @@ body.open .sidebar {
 			border: 0 none;
 			border-right: 2px solid #bbbbbb;
 			display: inline-block;
-			padding: .5em 1.25em;
+			padding: .8em 1.25em;
 			color: white;
 			outline: none;
 			transition: all 0.3s ease 0s;
@@ -171,16 +173,33 @@ body.open .sidebar {
 			-webkit-transition: all 0.3s ease 0s;
 			cursor: pointer;
 			width:25%;
-						&:last-child {
+			&:last-child {
 				border-right: 0 none;
 				color: #8FB693;
 			}
-			&:hover {
-				background: none repeat scroll 0 0 #bbbbbb;
-				color: #444444;
+			.text-hide{
+				display:none;
 			}
-
-
 		}
+		
+		
+		&:hover {
+			button{
+				width:10%;
+				text-align:center;
+				padding: .8em 0;
+				&:hover {
+					background:  #bbbbbb;
+					color: #444444;
+					width:70%;
+					text-align: left;
+					padding: .8em 1.25em;
+					.text-hide{
+						display:inline;
+					}
+				}
+			}
+		}
+
 	}
 }
