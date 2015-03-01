@@ -52,7 +52,7 @@ pre {
   .sidebar-inner {
   	max-height: 100%;
   	overflow-y: auto;
-    padding: 0 20px;
+    padding: 15px;
   }
   &.right {
     left: auto;
@@ -79,7 +79,6 @@ pre {
     transform: rotate(-90deg);
 	color: #444444;
 	text-transform: uppercase;
-	font-weight: bold;
   }
 }
 
@@ -88,14 +87,16 @@ body.open .sidebar {
 }
 
 .content {
-	padding-top: 90px;
-	.fixed-top{
-		top: 0;
+	padding-bottom: 100px;
+
+	.fixed-top {
 		position: fixed;
-		width: 243px;
-		padding: 20px 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 10px;
 		background: white;
-		border-bottom: 2px solid #8FB693;
+		border-top: 2px solid #8FB693;
 		.btn-group{
 			font-size: 0;
 			line-height: 1;
@@ -154,12 +155,13 @@ body.open .sidebar {
 }
 
 .form-field {
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 	label {
-		display: block;
-		font-size: 12px;
-		font-weight: 600;
-		color: #444444;
+	    display: block;
+	    font-size: 10px;
+	    font-weight: 600;
+	    color: rgb(167, 167, 167);
+	    text-transform: uppercase;
 	}
 	input[type='text'] {
 	    width: 95%;
@@ -168,6 +170,7 @@ body.open .sidebar {
 	    font-family: sans-serif;
 	    padding: 5px;
 		outline: none;
+
 		&:focus {
 			font-size: 16px;
 			font-weight: bold;

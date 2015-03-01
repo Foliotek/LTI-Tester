@@ -267,7 +267,7 @@ pre {
 .sidebar .sidebar-inner {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 20px;
+  padding: 15px;
 }
 .sidebar.right {
   left: auto;
@@ -293,21 +293,21 @@ pre {
   transform: rotate(-90deg);
   color: #444444;
   text-transform: uppercase;
-  font-weight: bold;
 }
 body.open .sidebar {
   transform: translateX(0);
 }
 .content {
-  padding-top: 90px;
+  padding-bottom: 100px;
 }
 .content .fixed-top {
-  top: 0;
   position: fixed;
-  width: 243px;
-  padding: 20px 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
   background: white;
-  border-bottom: 2px solid #8FB693;
+  border-top: 2px solid #8FB693;
 }
 .content .fixed-top .btn-group {
   font-size: 0;
@@ -356,13 +356,14 @@ body.open .sidebar {
   display: inline;
 }
 .form-field {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 .form-field label {
   display: block;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
-  color: #444444;
+  color: #a7a7a7;
+  text-transform: uppercase;
 }
 .form-field input[type='text'] {
   width: 95%;
