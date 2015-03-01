@@ -348,7 +348,7 @@ body.open .sidebar {
   font-size: 1.4em;
   font-weight: 300;
 }
-.fix-top {
+.fixed-top {
   top: 0;
   position: fixed;
   width: 243px;
@@ -356,7 +356,7 @@ body.open .sidebar {
   background: white;
   border-bottom: 2px solid #8FB693;
 }
-.fix-top .btn-group {
+.fixed-top .btn-group {
   font-size: 0;
   line-height: 1;
   white-space: nowrap;
@@ -364,7 +364,7 @@ body.open .sidebar {
   background: red;
   height: 30px;
 }
-.fix-top .btn-group button {
+.fixed-top .btn-group button {
   font-family: sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -383,25 +383,25 @@ body.open .sidebar {
   cursor: pointer;
   width: 25%;
 }
-.fix-top .btn-group button:last-child {
+.fixed-top .btn-group button:last-child {
   border-right: 0 none;
   color: #8FB693;
 }
-.fix-top .btn-group button .text-hide {
+.fixed-top .btn-group button .text-hide {
   display: none;
 }
-.fix-top .btn-group:hover button {
+.fixed-top .btn-group:hover button:not(:hover) {
   width: 10%;
   text-align: center;
   padding: .8em 0;
 }
-.fix-top .btn-group:hover button:hover {
+.fixed-top .btn-group:hover button:hover {
   background: #bbbbbb;
   color: #444444;
   width: 70%;
   text-align: left;
   padding: .8em 1.25em;
 }
-.fix-top .btn-group:hover button:hover .text-hide {
+.fixed-top .btn-group:hover button:hover .text-hide {
   display: inline;
 }

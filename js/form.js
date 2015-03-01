@@ -182,7 +182,17 @@
 
 			var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
 			custom_fields.forEach(function (f) {
-				renderAdd($form, f);
+				var exists = false;
+				$(".custom_field").each(function(){
+					if($(this).val() === f){
+						exists = true;
+						return;
+					}
+				});
+				
+				if(!exists){					
+					renderAdd($form, f);
+				}
 			});
 
 			Object.keys(localStorage).forEach(function (k) {
