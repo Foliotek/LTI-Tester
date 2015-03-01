@@ -76,6 +76,9 @@ pre {
     text-align: center;
     line-height: 40px;
     transform: rotate(-90deg);
+	color: #444444;
+	text-transform: uppercase;
+	font-weight: bold;
   }
 }
 body.open .sidebar {
@@ -83,7 +86,7 @@ body.open .sidebar {
 }
 
 #form {
-	padding-top: 110px;
+	padding-top: 75px;
 }
 .form-field {
 	margin-bottom: 5px;
@@ -91,14 +94,21 @@ body.open .sidebar {
 		display: block;
 		font-size: 12px;
 		font-weight: 600;
-		color: #555;
+		color: #444444;
 	}
 	input[type='text'] {
-	    width: 70%;
+	    width: 95%;
 	    border: 1px solid rgb(187, 187, 187);
 	    font-size: 14px;
 	    font-family: sans-serif;
 	    padding: 5px;
+		outline: none;
+		&:focus {
+			font-size: 16px;
+			font-weight: bold;
+			background-color: #bbbbbb;
+			color: #444444;
+		}
 	}
 	.custom_field {
 		margin: 10px 0;
@@ -130,31 +140,47 @@ body.open .sidebar {
 
 
 
-
-.btn-group{
+.fix-top{
 	top: 0;
 	position: fixed;
 	width: 243px;
-	padding-top: 20px;
+	padding: 20px 0;
 	background: white;
-	button {
-		background: #444444;
-	  	color: #FFFFFF;
-	  	border: 0 none;
-	  	cursor: pointer;
-	  	font-family: sans-serif;
-	  	font-size: 14px;
-	  	font-weight: bold;
-	  	padding: 7px 0;
-	  	text-transform: none;
-	  	transition: all 0.3s ease 0s;
-	  	-moz-transition: all 0.3s ease 0s;
-	  	-webkit-transition: all 0.3s ease 0s;
-	  	width: 36.6%;
-		margin-bottom: 10px;
-		&:hover {
-		  background: none repeat scroll 0 0 #bbbbbb;
-		  color: #FFFFFF;
+	border-bottom: 2px solid #8FB693;
+	.btn-group{
+		font-size: 0;
+		line-height: 1;
+		white-space: nowrap;
+		display: inline;
+		background:red;
+		button {
+			font-family: sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+			text-decoration: none;
+			text-transform: uppercase;
+			background: #444444;
+			border: 0 none;
+			border-right: 2px solid #bbbbbb;
+			display: inline-block;
+			padding: .5em 1.25em;
+			color: white;
+			outline: none;
+			transition: all 0.3s ease 0s;
+			-moz-transition: all 0.3s ease 0s;
+			-webkit-transition: all 0.3s ease 0s;
+			cursor: pointer;
+			width:25%;
+						&:last-child {
+				border-right: 0 none;
+				color: #8FB693;
+			}
+			&:hover {
+				background: none repeat scroll 0 0 #bbbbbb;
+				color: #444444;
+			}
+
+
 		}
 	}
 }
