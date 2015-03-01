@@ -298,8 +298,62 @@ pre {
 body.open .sidebar {
   transform: translateX(0);
 }
-#form {
+.content {
   padding-top: 90px;
+}
+.content .fixed-top {
+  top: 0;
+  position: fixed;
+  width: 243px;
+  padding: 20px 0;
+  background: white;
+  border-bottom: 2px solid #8FB693;
+}
+.content .fixed-top .btn-group {
+  font-size: 0;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline;
+  background: red;
+  height: 30px;
+}
+.content .fixed-top .btn-group button {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #444444;
+  border: 0 none;
+  border-right: 2px solid #bbbbbb;
+  display: inline-block;
+  padding: .8em 1.25em;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  cursor: pointer;
+  width: 25%;
+}
+.content .fixed-top .btn-group button:last-child {
+  border-right: 0 none;
+  color: #8FB693;
+}
+.content .fixed-top .btn-group:hover button:not(:hover) {
+  width: 10%;
+  text-align: center;
+  padding: .8em 0;
+}
+.content .fixed-top .btn-group:hover button:hover {
+  background: #bbbbbb;
+  color: #444444;
+  width: 70%;
+  text-align: left;
+  padding: .8em 1.25em;
+}
+.content .fixed-top .btn-group:hover button:hover .hide {
+  display: inline;
 }
 .form-field {
   margin-bottom: 5px;
@@ -348,60 +402,9 @@ body.open .sidebar {
   font-size: 1.4em;
   font-weight: 300;
 }
-.fixed-top {
-  top: 0;
-  position: fixed;
-  width: 243px;
-  padding: 20px 0;
-  background: white;
-  border-bottom: 2px solid #8FB693;
-}
-.fixed-top .btn-group {
-  font-size: 0;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline;
-  background: red;
-  height: 30px;
-}
-.fixed-top .btn-group button {
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-  background: #444444;
-  border: 0 none;
-  border-right: 2px solid #bbbbbb;
-  display: inline-block;
-  padding: .8em 1.25em;
-  color: white;
-  outline: none;
-  transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
-  cursor: pointer;
-  width: 25%;
-}
-.fixed-top .btn-group button:last-child {
-  border-right: 0 none;
-  color: #8FB693;
-}
-.fixed-top .btn-group button .text-hide {
-  display: none;
-}
-.fixed-top .btn-group:hover button:not(:hover) {
-  width: 10%;
-  text-align: center;
-  padding: .8em 0;
-}
-.fixed-top .btn-group:hover button:hover {
-  background: #bbbbbb;
+.debug-field strong {
   color: #444444;
-  width: 70%;
-  text-align: left;
-  padding: .8em 1.25em;
 }
-.fixed-top .btn-group:hover button:hover .text-hide {
-  display: inline;
+.hide {
+  display: none;
 }

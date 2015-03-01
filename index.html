@@ -18,24 +18,24 @@
 		<div class="sidebar">
 			<div class="sidebar-handle">config</div>
             <div class="sidebar-inner">
-    			<form id="form">
+    			<form id="form" class="content">
 					<div class="fixed-top">
 						<div class="btn-group">
 						  <button type="button" id="add">
 							  <i class="fa fa-plus fa-lg"></i>
-							  <div class="text-hide">Add Fields</div>
+							  <div class="hide">Add Fields</div>
 							</button>
 						  	<button type="button" id="ls-load">
 							  	<i class="fa fa-upload fa-lg"></i>
-								<div class="text-hide">Load Fields</div>
+								<div class="hide">Load Fields</div>
 							</button>
 							<button type="button" id="ls-load">
 								<i class="fa fa-minus fa-lg"></i>
-								<div class="text-hide">Remove Fields</div>
+								<div class="hide">Remove Fields</div>
 							</button>
 							<button type="submit">
 								<i class="fa fa-check fa-lg"></i>
-								<div class="text-hide">Submit</div>
+								<div class="hide">Submit</div>
 							</button>
 						</div>
 					</div>
@@ -45,14 +45,28 @@
 		</div>
         <div class="sidebar right">
             <div class="sidebar-inner">
-                <div class="debug-field">
-                    <strong>Signature Base</strong>
-                    <pre id="debug-signature-base"></pre>
-                </div>
-                <div class="debug-field">
-                    <strong>Signature</strong>
-                    <pre id="debug-signature"></pre>
-                </div>
+				<div class="content">
+					<div class="fixed-top">
+						<div class="btn-group">
+						  <button type="button" id="url">
+							  <i class="fa fa-external-link fa-lg"></i>
+							  <div class="hide">Generate URL</div>
+							</button>
+						</div>
+					</div>
+					<div class="debug-field hide">
+						<strong>Shareable Link</strong>
+						<pre id="debug-link"></pre>
+					</div>
+					<div class="debug-field">
+						<strong>Signature Base</strong>
+						<pre id="debug-signature-base"></pre>
+					</div>
+					<div class="debug-field">
+						<strong>Signature</strong>
+						<pre id="debug-signature"></pre>
+					</div>
+				</div>
             </div>
         </div>
   
@@ -60,8 +74,6 @@
             <h1>Welcome to the LTI Tester</h1>
             <p>Enter your data in the configuration on the left, and click the button to begin</p>
         </div>
-
-		
 
         <!-- Templates -->
         <script type="text/template" id="form-field-template">
