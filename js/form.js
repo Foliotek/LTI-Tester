@@ -27,6 +27,21 @@
 			return Mustache.render(template, f);
 		}).join('');
 		$form.append(fieldHtml);
+		
+		
+		
+		$("#ls-clear").on('click', function (ev) {
+			$form.find("input[type=text]").each(function(){
+				
+				if($(this).hasClass("custom_field")){
+					$(this).parent().remove();
+				}
+				else{
+					$(this).val('');
+				}
+			});
+		});
+		
 	}
 	function renderAdd($form, field) {
 		var scroll = field === undefined;
