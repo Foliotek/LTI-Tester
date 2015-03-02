@@ -51,7 +51,7 @@
 		//TODO: FIX SCROLL
 		if(scroll){
 			//log("here");
-			$form.scrollTo(".form-field:last");
+			$form.parent().scrollTo(".form-field:last");
 		}
 		return field;
 	}
