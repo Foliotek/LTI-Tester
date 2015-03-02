@@ -41,7 +41,8 @@ module.exports = function (grunt) {
 		copy: {
 			dist: {
 				files: [
-					{expand: true, flatten: true, src:'*.html', dest:'./dist/', filter: 'isFile' }
+					{ expand: true, flatten: true, src:'*.html', dest:'./dist/', filter: 'isFile' },
+					{ expand: true, flatten: true, src: 'bower_components/font-awesome/fonts/*.*', dest: './dist/fonts/', filter: 'isFile' }
 				]
 			}
 		},
@@ -77,6 +78,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-usemin');
@@ -95,6 +97,7 @@ module.exports = function (grunt) {
 		'concat:generated',
 		'uglify:generated',
 		'less:dist',
+		'cssmin:generated',
 		'usemin', 
 		'connect:dist'
 		]);
