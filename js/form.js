@@ -28,6 +28,30 @@
 		}).join('');
 		$form.append(fieldHtml);
 		
+		
+		$("#ls-load").on('click', function (ev) {
+			ev.preventDefault();
+
+			var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
+			custom_fields.forEach(function (f) {
+				var exists = false;
+				$(".custom_field").each(function(){
+					if($(this).val() === f){
+						exists = true;
+						return;
+					}
+				});
+				
+				if(!exists && f !== ''){					
+					renderAdd($form, f);
+				}
+			});
+
+			Object.keys(localStorage).forEach(function (k) {
+				$form.find("input[name='" + k +"']").val(localStorage.getItem(k)).trigger("change");
+			});
+		});
+		
 		$("#ls-clear").on('click', function (ev) {
 			$form.find("input[type=text]").each(function(){
 				
@@ -179,41 +203,24 @@
 	function bindSubmit ($form) {
 		$form.on('submit', function (ev) {
 			ev.preventDefault();
-
+			bindLocalStorage($form);
 			newOauth($form);
 			//oldOauth($form);
 		});
 	}
 
 	function bindLocalStorage ($form) {
-		$form.on("blur", "input[name]", function (ev) {
-			var input = $(ev.currentTarget);
+		localStorage.clear();
+		var customFields = $form.find(".custom_field").map(function(f, i) {
+			return $(i).val();
+		}).toArray();
+		localStorage.setItem('tester_custom_fields', customFields.join(','));
+		
+		$("input[name]").each(function (){
+			var input = $(this);
 			var name = input.attr("name");
 			var val = input.val();
 			localStorage.setItem(name, val);
-		});
-
-		$("#ls-load").on('click', function (ev) {
-			ev.preventDefault();
-
-			var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
-			custom_fields.forEach(function (f) {
-				var exists = false;
-				$(".custom_field").each(function(){
-					if($(this).val() === f){
-						exists = true;
-						return;
-					}
-				});
-				
-				if(!exists){					
-					renderAdd($form, f);
-				}
-			});
-
-			Object.keys(localStorage).forEach(function (k) {
-				$form.find("input[name='" + k +"']").val(localStorage.getItem(k)).trigger("change");
-			});
 		});
 	}
 	
@@ -223,10 +230,6 @@
 		})
 		
 		$form.on("change", ".custom_field", function () {
-			var customFields = $form.find(".custom_field").map(function(f, i) {
-				return $(i).val();
-			}).toArray();
-			localStorage.setItem('tester_custom_fields', customFields.join(','));
 			$(this).next().attr("name", $(this).val());
 		});
 		
@@ -253,7 +256,7 @@
 		
 		bindSubmit($form);		
 		bindAdd($form);
-		bindLocalStorage($form);
+		//bindLocalStorage($form);
 	};
 
 })(app);
