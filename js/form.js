@@ -50,8 +50,11 @@
 		var field = $(html).insertAfter($form.find(".form-field:last"));
 		//TODO: FIX SCROLL
 		if(scroll){
-			//log("here");
 			$form.parent().scrollTo(".form-field:last");
+		}
+		else {
+			var input = $(field.find(".custom_field"));
+			input.changeElementType("label", input.val());
 		}
 		return field;
 	}
@@ -241,7 +244,6 @@
 			var value = label.html();
 			label.changeElementType("input", value);
 		});
-
 	}
 
 	app.form = {};
