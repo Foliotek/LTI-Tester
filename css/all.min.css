@@ -376,7 +376,7 @@ body.open .sidebar {
 .form-field input[type='text']:focus {
   outline: 0;
 }
-.form-field .custom_field {
+.form-field input.custom_field {
   margin: 10px 0;
 }
 #LaunchFrame {

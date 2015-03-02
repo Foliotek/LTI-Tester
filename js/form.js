@@ -219,8 +219,7 @@
 			renderAdd($form);
 		})
 		
-		$form.on("change", ".custom_field"
-				 , function () {
+		$form.on("change", ".custom_field", function () {
 			var customFields = $form.find(".custom_field").map(function(f, i) {
 				return $(i).val();
 			}).toArray();
@@ -228,6 +227,21 @@
 			$(this).next().attr("name", $(this).val());
 		});
 		
+		
+		$form.on("blur", "input.custom_field", function (ev) {
+			var input = $(ev.currentTarget);
+			var value = input.val();
+			if(value){
+				input.changeElementType("label", value);
+			}
+		});
+		
+		$form.on("click", "label.custom_field", function (ev) {
+			var label = $(ev.currentTarget);
+			var value = label.html();
+			label.changeElementType("input", value);
+		});
+
 	}
 
 	app.form = {};
