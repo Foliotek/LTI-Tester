@@ -45,10 +45,6 @@ pre {
   transform: translateX(-100%);
   transition: transform .3s linear;
 
-  &.open {
-    transform: translateX(0);
-  }
-
   .sidebar-inner {
   	max-height: 100%;
   	overflow-y: auto;
@@ -83,7 +79,10 @@ pre {
   }
 }
 
-body.open .sidebar {
+body.open .sidebar.main {
+  transform: translateX(0);
+}
+body.advanced .sidebar.advanced {
   transform: translateX(0);
 }
 

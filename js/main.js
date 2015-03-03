@@ -1,8 +1,11 @@
 (function () {
 	"use strict";
-	
+	var $body = $("body");
 	$('.sidebar-handle').on('click', function () {
-		$('body').toggleClass('open');
+		$body.toggleClass('open');
+		if (!$body.is('.open')) {
+			$body.removeClass('advanced');
+		}
 	});
 
 	$("[title]").tooltipster({
