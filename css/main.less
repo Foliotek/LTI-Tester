@@ -102,7 +102,6 @@ body.open .sidebar {
 			line-height: 1;
 			white-space: nowrap;
 			display: inline;
-			background:red;
 			height:30px;
 		
 			button {
@@ -174,9 +173,12 @@ body.open .sidebar {
 		&:focus {
 			outline: 0;
 		}
-	}
-	input.custom_field {
-		margin: 10px 0;
+        &.custom_field {
+            margin: 10px 0;
+        }
+        &.custom_value {
+            width: 85%;
+        }
 	}
 }
 
@@ -214,3 +216,29 @@ body.open .sidebar {
 .hide {
 	display: none;
 }
+
+.input-group {
+    font-size: 0;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline;
+    button.btn-remove {
+    background: #444444;
+    border: 0 none;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    cursor: pointer;
+    width: 10%;
+    height: 28px;
+    vertical-align: top;
+        &:hover {
+            background:  #bbbbbb;
+            color: #444444;
+        }
+    }
+}
+
+

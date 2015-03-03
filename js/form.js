@@ -80,6 +80,11 @@
 			var input = $(field.find(".custom_field"));
 			input.changeElementType("label", input.val());
 		}
+        
+        $(".btn-remove").on('click', function (ev) {
+            $(this).parent().parent().remove();
+        });
+        
 		return field;
 	}
 	function newOauth($form) {
