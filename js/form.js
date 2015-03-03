@@ -26,7 +26,7 @@
 			}
 			return Mustache.render(template, f);
 		}).join('');
-		$form.append(fieldHtml);
+		$("#field-holder").append(fieldHtml);
 		
 		
 		$("#ls-load").on('click', function (ev) {

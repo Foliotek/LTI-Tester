@@ -298,10 +298,13 @@ body.open .sidebar.main {
 body.advanced .sidebar.advanced {
   transform: translateX(0);
 }
-.content {
-  padding-bottom: 100px;
+#form {
+  height: 100%;
 }
-.content .fixed-top {
+#field-holder {
+  padding-bottom: 90px;
+}
+.form-actions {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -310,14 +313,14 @@ body.advanced .sidebar.advanced {
   background: white;
   border-top: 2px solid #8fb693;
 }
-.content .fixed-top .btn-group {
+.form-actions .btn-group {
   font-size: 0;
   line-height: 1;
   white-space: nowrap;
   display: inline;
   height: 30px;
 }
-.content .fixed-top .btn-group button {
+.form-actions .btn-group button {
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
@@ -335,10 +338,10 @@ body.advanced .sidebar.advanced {
   cursor: pointer;
   width: 25%;
 }
-.content .fixed-top .btn-group button:last-child {
+.form-actions .btn-group button:last-child {
   margin-right: 0;
 }
-.content .fixed-top .btn-group button:hover {
+.form-actions .btn-group button:hover {
   background: #bbbbbb;
   color: #444444;
 }
