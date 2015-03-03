@@ -56,7 +56,7 @@
 			$form.find("input[type=text]").each(function(){
 				
 				if($(this).hasClass("custom_field")){
-					$(this).parent().remove();
+					$(this).closest(".form-field.custom").remove();
 				}
 				else{
 					$(this).val('');

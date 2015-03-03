@@ -256,7 +256,7 @@ pre {
   top: 0;
   height: 100%;
   width: 300px;
-  border-right: 2px solid #8FB693;
+  border-right: 2px solid #8fb693;
   z-index: 1;
   transform: translateX(-100%);
   transition: transform .3s linear;
@@ -268,6 +268,7 @@ pre {
   max-height: 100%;
   overflow-y: auto;
   padding: 15px;
+  position: relative;
 }
 .sidebar.right {
   left: auto;
@@ -279,7 +280,7 @@ pre {
 .sidebar .sidebar-handle {
   cursor: pointer;
   background: none repeat scroll 0% 0% #FFF;
-  border: 2px solid #8FB693;
+  border: 2px solid #8fb693;
   border-top: 0;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
@@ -307,7 +308,7 @@ body.open .sidebar {
   right: 0;
   padding: 10px;
   background: white;
-  border-top: 2px solid #8FB693;
+  border-top: 2px solid #8fb693;
 }
 .content .fixed-top .btn-group {
   font-size: 0;
@@ -317,14 +318,13 @@ body.open .sidebar {
   height: 30px;
 }
 .content .fixed-top .btn-group button {
-  font-family: sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  background: #444444;
-  border: 0 none;
-  border-right: 2px solid #bbbbbb;
+  background: #777;
+  border: 0;
+  margin-right: 2px;
   display: inline-block;
   padding: .8em 1.25em;
   color: white;
@@ -336,23 +336,11 @@ body.open .sidebar {
   width: 25%;
 }
 .content .fixed-top .btn-group button:last-child {
-  border-right: 0 none;
-  color: #8FB693;
+  margin-right: 0;
 }
-.content .fixed-top .btn-group:hover button:not(:hover) {
-  width: 10%;
-  text-align: center;
-  padding: .8em 0;
-}
-.content .fixed-top .btn-group:hover button:hover {
+.content .fixed-top .btn-group button:hover {
   background: #bbbbbb;
   color: #444444;
-  width: 70%;
-  text-align: left;
-  padding: .8em 1.25em;
-}
-.content .fixed-top .btn-group:hover button:hover .hide {
-  display: inline;
 }
 .form-field {
   margin-bottom: 7px;
@@ -430,4 +418,12 @@ body.open .sidebar {
 .input-group button.btn-remove:hover {
   background: #bbbbbb;
   color: #444444;
+}
+#btn-advanced {
+  position: absolute;
+  top: 0px;
+  font-size: 22px;
+  border: 0px none;
+  background: none repeat scroll 0% 0% transparent;
+  right: 10px;
 }

@@ -14,6 +14,12 @@
         <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
         <!-- endbuild -->
 
+        <!-- build:css ./css/tooltipster.css -->
+        <link rel="stylesheet" type="text/css" href="bower_components/tooltipster/css/tooltipster.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/tooltipster/css/themes/tooltipster-shadow.css">
+        <!-- endbuild -->
+
+
         <link rel="stylesheet" href="./css/all.min.css">
     </head>
     <body>
@@ -21,24 +27,21 @@
 		<div class="sidebar">
 			<div class="sidebar-handle">config</div>
             <div class="sidebar-inner">
+                <button id="btn-advanced" title="Show advanced options"><i class="fa fa-gear"></i></button>
     			<form id="form" class="content">
 					<div class="fixed-top">
 						<div class="btn-group">
-						  <button type="button" id="add">
+						  <button type="button" id="add" title="Add Custom Fields">
 							  <i class="fa fa-plus fa-lg"></i>
-							  <div class="hide">Add Fields</div>
 							</button>
-						  	<button type="button" id="ls-load">
+						  	<button type="button" id="ls-load" title="Load Fields from Local Storage">
 							  	<i class="fa fa-upload fa-lg"></i>
-								<div class="hide">Load Fields</div>
 							</button>
-							<button type="button" id="ls-clear">
+							<button type="button" id="ls-clear" title="Clear Form">
 								<i class="fa fa-minus fa-lg"></i>
-								<div class="hide">Clear Fields</div>
 							</button>
-							<button type="submit">
+							<button type="submit" title="Submit">
 								<i class="fa fa-check fa-lg"></i>
-								<div class="hide">Submit</div>
 							</button>
 						</div>
 					</div>
@@ -51,9 +54,8 @@
 				<div class="content">
 					<div class="fixed-top">
 						<div class="btn-group">
-						  <button type="button" id="btn-shareable-url">
+						  <button type="button" id="btn-shareable-url" title="Generate a Shareable URL">
 							  <i class="fa fa-external-link fa-lg"></i>
-							  <div class="hide">Generate URL</div>
 							</button>
 						</div>
 					</div>
@@ -86,15 +88,14 @@
             </div>
         </script>
 		<script type="text/template" id="form-add-template">
-			<div class="form-field custom">
-            <input class="custom_field" type="text" placeholder="[Enter Key]" value="{{field}}" />
-            <div class="input-group">
-            <input class="custom_value" type="text" placeholder="[Enter Value]" name="{{field}}" />
-            <button type="button" class="btn-remove">
-                <i class="fa fa-remove fa-lg"></i>
-            </button>
-            <div>
-			</div>
+            <div class="form-field custom">
+                <input class="custom_field" type="text" placeholder="[Enter Key]" value="{{field}}" />
+                <div class="input-group">
+                <input class="custom_value" type="text" placeholder="[Enter Value]" name="{{field}}" />
+                <button type="button" class="btn-remove">
+                    <i class="fa fa-remove fa-lg"></i>
+                </button>
+            </div>
         </script>
         <script type="text/template" id="iframe-template">
             <iframe id="LaunchFrame" name="LaunchFrame" class="LaunchFrame" width="100%" srolling="auto" frameborder="1" transparency></iframe>
@@ -107,6 +108,7 @@
         <!-- build:js ./js/all.min.js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/mustache/mustache.min.js"></script>
+        <script src="bower_components/tooltipster/js/jquery.tooltipster.js"></script>
         <script src="js/sha1.js"></script>
         <script src="js/oauth.foliotek.js"></script>
         <script src="js/common.js"></script>
