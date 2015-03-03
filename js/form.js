@@ -74,7 +74,7 @@
 		var field = $(html).insertAfter($form.find(".form-field:last"));
 		//TODO: FIX SCROLL
 		if(scroll){
-			$form.parent().scrollTo(".form-field:last");
+			$form.closest(".sidebar-inner").scrollTo(".form-field:last");
 		}
 		else {
 			var input = $(field.find(".custom_field"));
@@ -82,7 +82,7 @@
 		}
         
         $(".btn-remove").on('click', function (ev) {
-            $(this).parent().parent().remove();
+        	$(this).closest(".form-field.custom").remove();
         });
         
 		return field;
@@ -138,79 +138,12 @@
 			formEl.remove();
 		}, 1000);
 	}
-	// function oldOauth($form){ 
-	// 	var formValues = $form.serializeObject();
-	// 	var key = {
-	// 		consumerSecret: formValues['secret']
-	// 	};
-	// 	var message = {
-	// 		method: 'POST',
-	// 		action: formValues['endpoint']
-	// 	};
-
-	// 	delete formValues['secret'];
-	// 	delete formValues['endpoint'];
-	// 	formValues['oauth_nonce'] = OAuth.nonce(10);
-	// 	formValues['oauth_timestamp'] = OAuth.timestamp();
-	// 	formValues['oauth_version'] = '1.0';
-	// 	var formString = Object.keys(formValues).map(function(k) { return k + '=' + formValues[k]; }).join('&');
-	// 	message.parameters = OAuth.decodeForm(formString);
-	// 	OAuth.SignatureMethod.sign(message, key);
-
-	// 	// log("Foliotek's: " + formString);
-	// 	// log("Foliotek's: ", message);
-	// 	// log("normalizedParameters", OAuth.SignatureMethod.normalizeParameters(message.parameters));
-	// 	// log("signatureBaseString" , OAuth.SignatureMethod.getBaseString(message));
-	// 	// log("signature"           , OAuth.getParameter(message.parameters, "oauth_signature"));
-	// 	// log("authorizationHeader" , OAuth.getAuthorizationHeader("", message.parameters));
-	// 	//var postData = OAuth.SignatureMethod.normalizeParameters(message.parameters) + 
-	// 	//				'&oauth_signature=' + OAuth.getParameter(message.parameters, "oauth_signature");
-
-	// 	var formTemplate = '<form method="{{method}}" action="{{{action}}}" target="{{target}}" '
-	// 	+ 'enctype="application/x-www-form-urlencoded">'
-	// 	+ '{{#fields}}<input type="hidden" name="{{name}}" value="{{val}}" />{{/fields}}'
-	// 	+ '</form>';
-
-	// 	var formHtml = Mustache.render(formTemplate, {
-	// 		method: 'POST',
-	// 		action: message.action,
-	// 		target: 'LaunchFrame',
-	// 		fields: OAuth.getParameterList(message.parameters).map(function(f) {
-	// 			return {
-	// 				name: f[0],
-	// 				val: f[1]
-	// 			};
-	// 		})
-	// 	});
-	// 	log(formHtml);
-
-	// 	var existing = $("#LaunchFrame");
-	// 	var newIframe = $($("#iframe-template").html());
-	// 	if (existing.length) {
-	// 		existing.replaceWith(newIframe);
-	// 	}
-	// 	else {
-	// 		$("body").append(newIframe);
-	// 	}
-
-	// 	newIframe.on('load', function() {
-	// 		newIframe.addClass('loaded');
-	// 	});
-
-	// 	var formEl = $(formHtml).appendTo("body");
-	// 	formEl.submit();
-	// 	$("body").removeClass('open');
-	// 	setTimeout(function () {
-	// 		formEl.remove();
-	// 	}, 1000);
-	// };
 
 	function bindSubmit ($form) {
 		$form.on('submit', function (ev) {
 			ev.preventDefault();
 			bindLocalStorage($form);
 			newOauth($form);
-			//oldOauth($form);
 		});
 	}
 
@@ -261,7 +194,6 @@
 		
 		bindSubmit($form);		
 		bindAdd($form);
-		//bindLocalStorage($form);
 	};
 
 })(app);
