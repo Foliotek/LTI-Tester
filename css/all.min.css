@@ -361,7 +361,7 @@ body.open .sidebar {
   display: block;
   font-size: 10px;
   font-weight: 600;
-  color: #a7a7a7;
+  color: #777;
   text-transform: uppercase;
 }
 .form-field input[type='text'] {
