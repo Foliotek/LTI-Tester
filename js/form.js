@@ -74,7 +74,7 @@
 		var field = $(html).insertAfter($form.find(".form-field:last"));
 		//TODO: FIX SCROLL
 		if(scroll){
-			$form.closest(".sidebar-inner").scrollTo(".form-field:last");
+			$form.find(".sidebar-inner").scrollTo(".form-field:last");
 		}
 		else {
 			var input = $(field.find(".custom_field"));
@@ -176,14 +176,18 @@
 			var input = $(ev.currentTarget);
 			var value = input.val();
 			if(value){
-				input.changeElementType("label", value);
+				input.changeElementType("label", value).before('<i class="fa fa-edit fa-lg"></i>');
 			}
 		});
 		
-		$form.on("click", "label.custom_field", function (ev) {
-			var label = $(ev.currentTarget);
+		$form.on("click", "label.custom_field, i.fa-edit", function (ev) {
+            var label = $(ev.currentTarget);
+            if($(this).is("i")){
+                label = $(ev.currentTarget).next();
+            }
+			
 			var value = label.html();
-			label.changeElementType("input", value);
+			label.changeElementType("input", value).prev().remove();
 		});
 	}
 

@@ -349,11 +349,14 @@ body.advanced .sidebar.advanced {
   margin-bottom: 7px;
 }
 .form-field label {
-  display: block;
+  display: inline;
   font-size: 10px;
   font-weight: 600;
   color: #777;
   text-transform: uppercase;
+}
+.form-field label.custom_field {
+  cursor: pointer;
 }
 .form-field input[type='text'] {
   width: 95%;
@@ -371,6 +374,33 @@ body.advanced .sidebar.advanced {
 }
 .form-field input[type='text'].custom_value {
   width: 85%;
+}
+.form-field .input-group {
+  font-size: 0;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline;
+}
+.form-field .input-group button.btn-remove {
+  background: #777;
+  border: 0 none;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  cursor: pointer;
+  width: 10%;
+  height: 28px;
+  vertical-align: top;
+}
+.form-field .input-group button.btn-remove:hover {
+  background: #bbbbbb;
+  color: #444444;
+}
+.form-field i.fa-edit {
+  cursor: pointer;
+  color: #777;
 }
 #LaunchFrame {
   position: fixed;
@@ -398,29 +428,6 @@ body.advanced .sidebar.advanced {
 }
 .hide {
   display: none;
-}
-.input-group {
-  font-size: 0;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline;
-}
-.input-group button.btn-remove {
-  background: #444444;
-  border: 0 none;
-  color: white;
-  outline: none;
-  transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
-  cursor: pointer;
-  width: 10%;
-  height: 28px;
-  vertical-align: top;
-}
-.input-group button.btn-remove:hover {
-  background: #bbbbbb;
-  color: #444444;
 }
 #btn-advanced {
   position: absolute;

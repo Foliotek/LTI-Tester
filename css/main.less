@@ -139,11 +139,14 @@ body.advanced .sidebar.advanced {
 .form-field {
 	margin-bottom: 7px;
 	label {
-	    display: block;
+	    display: inline;
 	    font-size: 10px;
 	    font-weight: 600;
 	    color: #777;
 	    text-transform: uppercase;
+        &.custom_field {
+            cursor: pointer;
+        }
 	}
 	input[type='text'] {
 	    width: 95%;
@@ -163,6 +166,34 @@ body.advanced .sidebar.advanced {
             width: 85%;
         }
 	}
+    .input-group {
+        font-size: 0;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline;
+        button.btn-remove {
+        background: #777;
+        border: 0 none;
+        color: white;
+        outline: none;
+        transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease 0s;
+        cursor: pointer;
+        width: 10%;
+        height: 28px;
+        vertical-align: top;
+            &:hover {
+                background:  #bbbbbb;
+                color: #444444;
+            }
+        }
+    }
+    
+    i.fa-edit {
+        cursor: pointer;
+        color: #777;
+    }
 }
 
 #LaunchFrame {
@@ -200,29 +231,7 @@ body.advanced .sidebar.advanced {
 	display: none;
 }
 
-.input-group {
-    font-size: 0;
-    line-height: 1;
-    white-space: nowrap;
-    display: inline;
-    button.btn-remove {
-    background: #444444;
-    border: 0 none;
-    color: white;
-    outline: none;
-    transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -webkit-transition: all 0.3s ease 0s;
-    cursor: pointer;
-    width: 10%;
-    height: 28px;
-    vertical-align: top;
-        &:hover {
-            background:  #bbbbbb;
-            color: #444444;
-        }
-    }
-}
+
 #btn-advanced {
     position: absolute;
     top: 0px;

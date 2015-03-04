@@ -107,9 +107,10 @@ $.fn.changeElementType = function(newType, content, setVal) {
 	$.each(this[0].attributes, function(idx, attr) {
 		attrs[attr.nodeName] = attr.value;
 	});
-	this.replaceWith(function() {
-		return $("<" + newType + "/>", attrs).append(content).val(content);
-	});
+    
+    var el = $("<" + newType + "/>", attrs).append(content).val(content);
+	this.replaceWith(el);
+    return el;
 };
 	
 
