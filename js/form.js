@@ -130,7 +130,7 @@
 
 		var formEl = $(formHtml).appendTo("body");
 		formEl.submit();
-		$("body").removeClass('open');
+		$("body").removeClass('advanced open');
 		setTimeout(function () {
 			formEl.remove();
 		}, 1000);
@@ -193,9 +193,7 @@
             }
 			
 			var value = label.html();
-			var input = label.changeElementType("input", value);
-			input.prev().remove();
-			input.focus();
+			label.changeElementType("input", value).prev().remove();
 		});
 
 		$("#custom-field-holder").html(Mustache.render($("#custom-field-template").html()));
