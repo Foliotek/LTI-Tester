@@ -37,7 +37,7 @@
 
 		console.log("loading from", data);
 		Object.keys(data).forEach(function (k) {
-			form.find("[name=" + k + "]").val(data[k]);
+			form.find("[name=" + k + "]").val(oauth_decode(data[k]));
 		});
 		$("body").addClass("open");
 	}
@@ -56,7 +56,7 @@
 			ev.preventDefault();
 			$("body").toggleClass("advanced");
 		});
-		$("#btn-shareable-url").on('click', function (ev) {
+		$form.on('submit', function (ev) {
 			var data = processForm($form);
 			var b64 = btoa(data.signatureBase);
 
@@ -64,9 +64,11 @@
 			var bitApiUrl = 'https://api-ssl.bitly.com/v3/shorten?access_token=' + BITLY_TOKEN + '&longUrl=' + shareUrl;
 			$.get(bitApiUrl).done(function (resp ){
 				if (resp.status_code === 200) {
+                    $("#debug-link").html(resp.data.url);
 					console.log(resp.data.url);
 				}
 				else {
+                    $("#debug-link").html("Sorry, we have reached our daily limit.");
 					console.error(resp.status_txt);
 				}
 			});
