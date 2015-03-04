@@ -35,7 +35,7 @@
 			var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
 			custom_fields.forEach(function (f) {
 				var exists = false;
-				$(".custom_field").each(function(){
+				$(".custom-field").each(function(){
 					if($(this).val() === f){
 						exists = true;
 						return;
@@ -55,7 +55,7 @@
 		$("#ls-clear").on('click', function (ev) {
 			$form.find("input[type=text]").each(function(){
 				
-				if($(this).hasClass("custom_field")){
+				if($(this).hasClass("custom-field")){
 					$(this).closest(".form-field.custom").remove();
 				}
 				else{
@@ -65,28 +65,25 @@
 		});
 		
 	}
+
 	function renderAdd($form, field) {
 		var scroll = field === undefined;
-		var template = $("#form-add-template").html();
+		var template = $("#custom-field-template").html();
 		var html = Mustache.render(template, {
 			field: field
 		});
-		var field = $(html).insertAfter($form.find(".form-field:last"));
-		//TODO: FIX SCROLL
-		if(scroll){
-			$form.find(".sidebar-inner").scrollTo(".form-field:last");
+		var field = $(html).insertAfter($form.find(".form-field.custom:last"));
+		if (scroll) {
+			$form.find(".sidebar-inner").scrollTo(".form-field.custom:last");
 		}
 		else {
-			var input = $(field.find(".custom_field"));
+			var input = $(field.find(".custom-field"));
 			input.changeElementType("label", input.val()).before('<i class="fa fa-edit"></i>');
 		}
         
-        $(".btn-remove").on('click', function (ev) {
-        	$(this).closest(".form-field.custom").remove();
-        });
-        
 		return field;
 	}
+
 	function newOauth($form) {
 		var formObj = $form.serializeObject();
 		var secret = formObj['secret'];
@@ -162,17 +159,24 @@
 		});
 	}
 	
-	function bindAdd ($form) {
-		$form.on("click", "#add", function(){
-			renderAdd($form);
-		})
-		
-		$form.on("change", ".custom_field", function () {
-			$(this).next().attr("name", $(this).val());
+	function bindCustomFields ($form) {
+
+		$form.on('keyup', '.form-field.custom:last input.custom-value', function (ev) {
+			var input = $(ev.currentTarget);
+			if (input.val()) {
+				renderAdd($form);
+			}
 		});
 		
+		$form.on("change", ".custom-field", function () {
+			$(this).next().attr("name", $(this).val());
+		});
+
+        $form.on('click', '.form-field.custom .btn-remove', function (ev) {
+        	$(this).closest(".form-field.custom").remove();
+        });
 		
-		$form.on("blur", "input.custom_field", function (ev) {
+		$form.on("blur", "input.custom-field", function (ev) {
 			var input = $(ev.currentTarget);
 			var value = input.val();
 			if(value){
@@ -180,7 +184,7 @@
 			}
 		});
 		
-		$form.on("click", "label.custom_field, i.fa-edit", function (ev) {
+		$form.on("click", "label.custom-field, i.fa-edit", function (ev) {
             var label = $(ev.currentTarget);
             if($(this).is("i")){
                 label = $(ev.currentTarget).next();
@@ -189,6 +193,8 @@
 			var value = label.html();
 			label.changeElementType("input", value).prev().remove();
 		});
+
+		$("#custom-field-holder").html(Mustache.render($("#custom-field-template").html()));
 	}
 
 	app.form = {};
@@ -197,7 +203,7 @@
 		render($form);
 		
 		bindSubmit($form);		
-		bindAdd($form);
+		bindCustomFields($form);
 	};
 
 })(app);

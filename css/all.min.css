@@ -315,8 +315,12 @@ body.advanced .sidebar.advanced {
 #form {
   height: 100%;
 }
-#field-holder {
-  padding-bottom: 90px;
+#custom-field-holder {
+  padding-bottom: 125px;
+}
+.custom-field-header {
+  margin: 15px 0 5px 0;
+  text-align: center;
 }
 .form-actions {
   position: fixed;
@@ -371,7 +375,7 @@ body.advanced .sidebar.advanced {
   color: #777;
   text-transform: uppercase;
 }
-.form-field label.custom_field {
+.form-field label.custom-field {
   cursor: pointer;
 }
 .form-field input[type='text'] {
@@ -385,10 +389,10 @@ body.advanced .sidebar.advanced {
 .form-field input[type='text']:focus {
   outline: 0;
 }
-.form-field input[type='text'].custom_field {
-  margin: 10px 0;
+.form-field input[type='text'].custom-field {
+  margin-bottom: 10px;
 }
-.form-field input[type='text'].custom_value {
+.form-field input[type='text'].custom-value {
   width: 85%;
 }
 .form-field .input-group {
@@ -417,6 +421,9 @@ body.advanced .sidebar.advanced {
 .form-field i.fa-edit {
   cursor: pointer;
   color: #777;
+}
+.form-field.custom {
+  padding-bottom: 10px;
 }
 #LaunchFrame {
   position: fixed;

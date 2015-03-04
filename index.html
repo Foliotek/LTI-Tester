@@ -30,12 +30,15 @@
             <div class="sidebar-inner">
                 <button id="btn-advanced" title="Show advanced options"><i class="fa fa-gear"></i></button>
                 <div id="field-holder"></div>
+                <h5 class="custom-field-header">Custom Fields</h5>
+                <div id="custom-field-holder">
+                </div>
             </div>
             <div class="form-actions">
                 <div class="btn-group">
-                  <button type="button" id="add" title="Add Custom Fields">
+                  <!-- <button type="button" id="add" title="Add Custom Fields">
                       <i class="fa fa-plus fa-lg"></i>
-                    </button>
+                    </button> -->
                     <button type="button" id="ls-load" title="Load Fields from Local Storage">
                         <i class="fa fa-upload fa-lg"></i>
                     </button>
@@ -88,11 +91,11 @@
             <input type="text" name="{{field}}" {{#required}}required{{/required}} />
             </div>
         </script>
-		<script type="text/template" id="form-add-template">
+		<script type="text/template" id="custom-field-template">
             <div class="form-field custom">
-                <input class="custom_field" type="text" placeholder="[Enter Key]" value="{{field}}" />
+                <input class="custom-field" type="text" placeholder="[Enter Key]" value="{{field}}" />
                 <div class="input-group">
-                <input class="custom_value" type="text" placeholder="[Enter Value]" name="{{field}}" />
+                <input class="custom-value" type="text" placeholder="[Enter Value]" name="{{field}}" />
                 <button type="button" class="btn-remove">
                     <i class="fa fa-remove fa-lg"></i>
                 </button>

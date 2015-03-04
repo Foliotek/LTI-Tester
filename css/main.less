@@ -95,8 +95,12 @@ body.advanced .sidebar.advanced {
 #form {
 	height: 100%;
 }
-#field-holder {
-	padding-bottom: 90px;
+#custom-field-holder {
+	padding-bottom: 125px;
+}
+.custom-field-header {
+  margin: 15px 0 5px 0;
+  text-align: center;
 }
 
 .form-actions {
@@ -152,7 +156,7 @@ body.advanced .sidebar.advanced {
 	    font-weight: 600;
 	    color: #777;
 	    text-transform: uppercase;
-        &.custom_field {
+        &.custom-field {
             cursor: pointer;
         }
 	}
@@ -163,46 +167,49 @@ body.advanced .sidebar.advanced {
 	    font-size: 14px;
 	    font-family: sans-serif;
 	    padding: 5px;
-		outline: none;
+		  outline: none;
 
 		&:focus {
 			outline: 0;
 		}
-    &.custom_field {
-        margin: 10px 0;
+    &.custom-field {
+        margin-bottom: 10px;
     }
-    &.custom_value {
+    &.custom-value {
         width: 85%;
     }
 	}
-    .input-group {
-        font-size: 0;
-        line-height: 1;
-        white-space: nowrap;
-        display: inline;
-        button.btn-remove {
-        background: #bbb;
-        border: 0 none;
-        color: white;
-        outline: none;
-        transition: all 0.3s ease 0s;
-        -moz-transition: all 0.3s ease 0s;
-        -webkit-transition: all 0.3s ease 0s;
-        cursor: pointer;
-        width: 10%;
-        height: 28px;
-        vertical-align: top;
-            &:hover {
-                background:  #999;
-                color: #444;
-            }
-        }
-    }
-    
-    i.fa-edit {
-        cursor: pointer;
-        color: #777;
-    }
+  .input-group {
+      font-size: 0;
+      line-height: 1;
+      white-space: nowrap;
+      display: inline;
+      button.btn-remove {
+      background: #bbb;
+      border: 0 none;
+      color: white;
+      outline: none;
+      transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -webkit-transition: all 0.3s ease 0s;
+      cursor: pointer;
+      width: 10%;
+      height: 28px;
+      vertical-align: top;
+          &:hover {
+              background:  #999;
+              color: #444;
+          }
+      }
+  }
+  
+  i.fa-edit {
+      cursor: pointer;
+      color: #777;
+  }
+  &.custom {
+    padding-bottom: 10px;
+  }
 }
 
 #LaunchFrame {
