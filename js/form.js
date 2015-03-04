@@ -210,7 +210,9 @@
             }
 			
 			var value = label.html();
-			label.changeElementType("input", value).prev().remove();
+            var input = label.changeElementType("input", value);
+			input.prev().remove();
+			input.focus();
 		});
 
 		$("#custom-field-holder").html(Mustache.render($("#custom-field-template").html()));
