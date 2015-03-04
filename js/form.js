@@ -139,6 +139,16 @@
 	function bindSubmit ($form) {
 		$form.on('submit', function (ev) {
 			ev.preventDefault();
+			var errorFields = $(this).find("input[name][aria-invalid=true]");
+			if (errorFields.length) {
+				errorFields.tooltipster({
+					content: "This field is not unique"
+				}).tooltipster("show");
+				setTimeout(function() { 
+					errorFields.tooltipster('destroy');
+				}, 3000);
+				return false;
+			}
 			bindLocalStorage($form);
 			newOauth($form);
 		});
@@ -168,8 +178,15 @@
 			}
 		});
 		
-		$form.on("change", ".custom-field", function () {
-			$(this).next().attr("name", $(this).val());
+		$form.on("change", ".custom-field", function (ev) {
+			var input = $(ev.currentTarget);
+			var field = input.closest(".form-field");
+			var fieldValue = field.find(".custom-value");
+			var fieldName = input.val();
+			if ($form.find("input[name='" + fieldName +"']").length) {
+				fieldValue.attr("aria-invalid", true);
+			}
+			fieldValue.attr("name", fieldName);
 		});
 
         $form.on('click', '.form-field.custom .btn-remove', function (ev) {
