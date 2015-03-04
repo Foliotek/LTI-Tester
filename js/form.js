@@ -63,7 +63,6 @@
 				}
 			});
 		});
-		
 	}
 
 	function renderAdd($form, field) {
@@ -144,6 +143,7 @@
 				errorFields.tooltipster({
 					content: "This field is not unique"
 				}).tooltipster("show");
+
 				setTimeout(function() { 
 					errorFields.tooltipster('destroy');
 				}, 3000);
@@ -186,6 +186,9 @@
 			if ($form.find("input[name='" + fieldName +"']").length) {
 				fieldValue.attr("aria-invalid", true);
 			}
+			else {
+				fieldValue.removeAttr("aria-invalid");
+			}
 			fieldValue.attr("name", fieldName);
 		});
 
@@ -210,7 +213,9 @@
             }
 			
 			var value = label.html();
-			label.changeElementType("input", value).prev().remove();
+			var input = label.changeElementType("input", value);
+			input.prev().remove();
+			input.focus();
 		});
 
 		$("#custom-field-holder").html(Mustache.render($("#custom-field-template").html()));
