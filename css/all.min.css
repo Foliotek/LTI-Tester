@@ -398,7 +398,7 @@ body.advanced .sidebar.advanced {
   display: inline;
 }
 .form-field .input-group button.btn-remove {
-  background: #777;
+  background: #bbb;
   border: 0 none;
   color: white;
   outline: none;
@@ -411,8 +411,8 @@ body.advanced .sidebar.advanced {
   vertical-align: top;
 }
 .form-field .input-group button.btn-remove:hover {
-  background: #bbbbbb;
-  color: #444444;
+  background: #999;
+  color: #444;
 }
 .form-field i.fa-edit {
   cursor: pointer;
@@ -447,30 +447,6 @@ body.advanced .sidebar.advanced {
 }
 .hide {
   display: none;
-}
-.input-group {
-  font-size: 0;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline;
-}
-.input-group button.btn-remove {
-  background: #444444;
-  border: 0 none;
-  color: white;
-  outline: none;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  cursor: pointer;
-  width: 10%;
-  height: 28px;
-  vertical-align: top;
-}
-.input-group button.btn-remove:hover {
-  background: #bbbbbb;
-  color: #444444;
 }
 #btn-advanced {
   position: absolute;
