@@ -173,7 +173,9 @@
 		});
 
         $form.on('click', '.form-field.custom .btn-remove', function (ev) {
-        	$(this).closest(".form-field.custom").remove();
+            if($(".form-field.custom").length > 1) {
+        	   $(this).closest(".form-field.custom").remove();
+            }
         });
 		
 		$form.on("blur", "input.custom-field", function (ev) {
