@@ -109,7 +109,7 @@ $.fn.changeElementType = function(newType, content, setVal) {
 	});
     
     var el = $("<" + newType + "/>", attrs).append(content).val(content);
-	this.replaceWith(el);
+   this.replaceWith(el);
     return el;
 };
 	
