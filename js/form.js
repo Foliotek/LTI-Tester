@@ -78,7 +78,7 @@
 		}
 		else {
 			var input = $(field.find(".custom_field"));
-			input.changeElementType("label", input.val());
+			input.changeElementType("label", input.val()).before('<i class="fa fa-edit"></i>');
 		}
         
         $(".btn-remove").on('click', function (ev) {
@@ -176,7 +176,7 @@
 			var input = $(ev.currentTarget);
 			var value = input.val();
 			if(value){
-				input.changeElementType("label", value).before('<i class="fa fa-edit fa-lg"></i>');
+				input.changeElementType("label", value).before('<i class="fa fa-edit"></i>');
 			}
 		});
 		
