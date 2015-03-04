@@ -355,7 +355,7 @@ body.advanced .sidebar.advanced {
   -ms-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   cursor: pointer;
-  width: 25%;
+  width: 33.3%;
 }
 .form-actions .btn-group button:last-child {
   margin-right: 0;

@@ -29,7 +29,7 @@
         return s;
     };
 
-    function oauth_decode(s) {
+    window.oauth_decode = function (s) {
 		if (s != null) {
             // Handle application/x-www-form-urlencoded, which is defined by
             // http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4.1
@@ -79,7 +79,6 @@
     OAuthRequest.prototype.setParameters = function (params) {
     	this.parameters = processParameters(params);
 	};
-
 	OAuthRequest.prototype.nonce = function (len) {
 		var chars = NONCE_CHARS;
         var result = "";
