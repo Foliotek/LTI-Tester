@@ -218,6 +218,8 @@ textarea {
     page-break-after: avoid;
   }
 }
+/* Variables */
+/* End Variables */
 html {
   height: 100%;
 }
@@ -258,8 +260,14 @@ pre {
   width: 300px;
   border-right: 2px solid #8fb693;
   z-index: 1;
-  transform: translateX(-100%);
-  transition: transform .3s linear;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -webkit-transition: transform 0.3s linear;
+  -moz-transition: transform 0.3s linear;
+  -ms-transition: transform 0.3s linear;
+  -o-transition: transform 0.3s linear;
 }
 .sidebar .sidebar-inner {
   max-height: 100%;
@@ -270,7 +278,10 @@ pre {
 .sidebar.right {
   left: auto;
   right: 0;
-  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
   border-right: 0;
   border-left: 2px solid #8fb693;
 }
@@ -288,7 +299,10 @@ pre {
   right: -78px;
   text-align: center;
   line-height: 40px;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
   color: #444444;
   text-transform: uppercase;
 }
@@ -325,16 +339,17 @@ body.advanced .sidebar.advanced {
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  background: #777;
+  background: #729871;
   border: 0;
   margin-right: 2px;
   display: inline-block;
   padding: .8em 1.25em;
   color: white;
   outline: none;
-  transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
   cursor: pointer;
   width: 25%;
 }
@@ -342,8 +357,9 @@ body.advanced .sidebar.advanced {
   margin-right: 0;
 }
 .form-actions .btn-group button:hover {
-  background: #bbbbbb;
-  color: #444444;
+  background: #86BA8B;
+  color: #3F7D3E;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 .form-field {
   margin-bottom: 7px;
@@ -380,7 +396,10 @@ body.advanced .sidebar.advanced {
   width: 100%;
   border: 0;
   opacity: 0;
-  transition: opacity .2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
 }
 #LaunchFrame.loaded {
   opacity: 1;
@@ -410,9 +429,10 @@ body.advanced .sidebar.advanced {
   border: 0 none;
   color: white;
   outline: none;
-  transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   cursor: pointer;
   width: 10%;
   height: 28px;
