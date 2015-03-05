@@ -7,6 +7,9 @@
 			$body.removeClass('advanced');
 		}
 	});
+	$('.hero-btn').on('click', function () {
+		$body.addClass('open');
+	});
 
 	$("[title]").tooltipster({
     	theme: 'tooltipster-shadow'

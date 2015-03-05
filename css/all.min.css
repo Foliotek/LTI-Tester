@@ -246,6 +246,16 @@ h1 {
   font-size: 1.4em;
   font-weight: 300;
 }
+.hero-btn {
+  color: white;
+  border-radius: 5px;
+  font-size: 26px;
+  padding: 10px 15px;
+  background: #6dbbe0;
+  font-weight: 300;
+  border: 2px solid white;
+  cursor: pointer;
+}
 footer {
   position: fixed;
   bottom: 0;
