@@ -1,3 +1,4 @@
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600";
 /*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -227,18 +228,32 @@ body {
   min-height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   background: white;
   overflow: hidden;
 }
 h1 {
   font-weight: 300;
+  font-size: 60px;
+  line-height: 1;
 }
-pre {
-  background: #ddd;
-  white-space: normal;
-  word-break: break-all;
+#intro {
+  width: 550px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 5%;
+  font-size: 1.4em;
+  font-weight: 300;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 13px;
 }
 #bg {
   position: fixed;
@@ -246,7 +261,7 @@ pre {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.15;
+  opacity: 0.2;
   background: url("http://foliotek.github.io/images/home-bg.jpg");
   background-size: cover;
   background-position: top center;
@@ -441,16 +456,17 @@ body.advanced .sidebar.advanced {
 #LaunchFrame.loaded {
   opacity: 1;
 }
-#intro {
-  width: 550px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 10%;
-  font-size: 1.4em;
-  font-weight: 300;
-}
 .debug-field strong {
-  color: #444444;
+  color: #444;
+  font-weight: 600;
+  font-size: 14px;
+}
+pre {
+  background: #eaeaea;
+  color: #333;
+  white-space: normal;
+  word-break: break-all;
+  margin: 5px 0 10px 0;
 }
 .hide {
   display: none;
