@@ -91,22 +91,33 @@ footer {
   }
 
   .sidebar-handle {
-    cursor: pointer;
-    background: none repeat scroll 0% 0% #FFF;
-    border: 2px solid @green;
-    border-top: 0;
-    border-bottom-right-radius: 100px;
-    border-bottom-left-radius: 100px;
-    width: 100px;
-    height: 50px;
+    border: 2px solid #8fb693;
+    width: 121px;
+    height: 400px;
     position: absolute;
     top: 40px;
-    right: -78px;
+    right: -125px;
     text-align: center;
-    line-height: 40px;
-    .transform(rotate(-90deg));
-    color: #444444;
-    text-transform: uppercase;
+    button {
+        background: #729871;
+        border: 0;
+        color: white;
+        outline: none;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        cursor: pointer;
+        width: 60px;
+        border-radius: 50%;
+        height: 60px;
+        margin-bottom: 25px;
+        &:hover {
+            background: #86BA8B;
+            color: #3F7D3E;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+        }
+    }
   }
 }
 
@@ -137,39 +148,7 @@ body.advanced .sidebar.advanced {
   background: white;
   border-top: 2px solid @green;
 
-  .btn-group{
-    font-size: 0;
-    line-height: 1;
-    white-space: nowrap;
-    display: inline;
-    height:30px;
-  
-    button {
-      font-size: 14px;
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-      background: @btnGreen;
-      border: 0;
-      margin-right: 2px;
-      display: inline-block;
-      padding: .8em 1.25em;
-      color: white;
-      outline: none;
-            .transition(all .3s linear);
-      cursor: pointer;
-      width:33.3%;
 
-      &:last-child {
-        margin-right: 0;
-      }
-      &:hover {
-                background: #86BA8B;
-                color: #3F7D3E;
-                text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-      }
-    }
-  }
 }
 
 .form-field {
@@ -268,12 +247,4 @@ pre {
   display: none;
 }
 
-#btn-advanced {
-  position: absolute;
-  top: 0px;
-  font-size: 22px;
-  border: 0px none;
-  background: none repeat scroll 0% 0% transparent;
-  right: 10px;
-}
 

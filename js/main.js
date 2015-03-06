@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 	var $body = $("body");
-	$('.sidebar-handle').on('click', function () {
+	$('#btn-config').on('click', function () {
 		$body.toggleClass('open');
 		if (!$body.is('.open')) {
 			$body.removeClass('advanced');

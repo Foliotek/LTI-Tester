@@ -255,6 +255,7 @@ h1 {
   font-weight: 300;
   border: 2px solid white;
   cursor: pointer;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 footer {
   position: fixed;
@@ -311,25 +312,33 @@ footer {
   border-left: 2px solid #8fb693;
 }
 .sidebar .sidebar-handle {
-  cursor: pointer;
-  background: none repeat scroll 0% 0% #FFF;
   border: 2px solid #8fb693;
-  border-top: 0;
-  border-bottom-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  width: 100px;
-  height: 50px;
+  width: 121px;
+  height: 400px;
   position: absolute;
   top: 40px;
-  right: -78px;
+  right: -125px;
   text-align: center;
-  line-height: 40px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  color: #444444;
-  text-transform: uppercase;
+}
+.sidebar .sidebar-handle button {
+  background: #729871;
+  border: 0;
+  color: white;
+  outline: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  cursor: pointer;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+  margin-bottom: 25px;
+}
+.sidebar .sidebar-handle button:hover {
+  background: #86BA8B;
+  color: #3F7D3E;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 body.open .sidebar.main {
   transform: translateX(0);
@@ -355,40 +364,6 @@ body.advanced .sidebar.advanced {
   padding: 10px;
   background: white;
   border-top: 2px solid #8fb693;
-}
-.form-actions .btn-group {
-  font-size: 0;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline;
-  height: 30px;
-}
-.form-actions .btn-group button {
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-  background: #729871;
-  border: 0;
-  margin-right: 2px;
-  display: inline-block;
-  padding: .8em 1.25em;
-  color: white;
-  outline: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -ms-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  cursor: pointer;
-  width: 33.3%;
-}
-.form-actions .btn-group button:last-child {
-  margin-right: 0;
-}
-.form-actions .btn-group button:hover {
-  background: #86BA8B;
-  color: #3F7D3E;
-  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 .form-field {
   margin-bottom: 7px;
@@ -480,12 +455,4 @@ pre {
 }
 .hide {
   display: none;
-}
-#btn-advanced {
-  position: absolute;
-  top: 0px;
-  font-size: 22px;
-  border: 0px none;
-  background: none repeat scroll 0% 0% transparent;
-  right: 10px;
 }

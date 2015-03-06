@@ -25,29 +25,28 @@
     <body>
         <div id="bg"></div>
 		<div class="sidebar main">
-			<div class="sidebar-handle">config</div>
+			<div class="sidebar-handle">
+                <button type="button" id="btn-config" title="Configure">
+                    <i class="fa fa-cubes fa-lg"></i>
+                </button>
+                <button type="button" id="ls-load" title="Load Fields from Local Storage">
+                    <i class="fa fa-upload fa-lg"></i>
+                </button>
+                <button type="button" id="ls-clear" title="Clear Form">
+                    <i class="fa fa-minus fa-lg"></i>
+                </button>
+                <button type="submit" title="Submit">
+                    <i class="fa fa-check fa-lg"></i>
+                </button>
+                <button id="btn-advanced" title="Show advanced options">
+                    <i class="fa fa-gear fa-lg"></i>
+                </button>
+            </div>
             <form id="form" class="content">
             <div class="sidebar-inner">
-                <button id="btn-advanced" title="Show advanced options"><i class="fa fa-gear"></i></button>
                 <div id="field-holder"></div>
                 <h5 class="custom-field-header">Custom Fields</h5>
                 <div id="custom-field-holder">
-                </div>
-            </div>
-            <div class="form-actions">
-                <div class="btn-group">
-                  <!-- <button type="button" id="add" title="Add Custom Fields">
-                      <i class="fa fa-plus fa-lg"></i>
-                    </button> -->
-                    <button type="button" id="ls-load" title="Load Fields from Local Storage">
-                        <i class="fa fa-upload fa-lg"></i>
-                    </button>
-                    <button type="button" id="ls-clear" title="Clear Form">
-                        <i class="fa fa-minus fa-lg"></i>
-                    </button>
-                    <button type="submit" title="Submit">
-                        <i class="fa fa-check fa-lg"></i>
-                    </button>
                 </div>
             </div>
         </form>
@@ -56,13 +55,6 @@
         <div class="sidebar right advanced">
             <div class="sidebar-inner">
 				<div class="content">
-					<!--<div class="fixed-top">
-						<div class="btn-group">
-						  <button type="button" id="btn-shareable-url" title="Generate a Shareable URL">
-							  <i class="fa fa-external-link fa-lg"></i>
-							</button>
-						</div>
-					</div>-->
 					<div class="debug-field">
 						<strong>Shareable Link</strong>
 						<pre id="debug-link"></pre>
