@@ -233,12 +233,18 @@ body {
   background: white;
   overflow: hidden;
 }
+button,
+input {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+/* Main Page */
 h1 {
   font-weight: 300;
   font-size: 60px;
   line-height: 1;
 }
-#intro {
+main.intro {
   width: 550px;
   margin: 0 auto;
   text-align: center;
@@ -278,13 +284,15 @@ footer {
   background-position: top center;
   z-index: -1;
 }
+/* End Main Page */
+/* Sidebar */
 .sidebar {
   background: white;
   position: absolute;
   top: 0;
   height: 100%;
   width: 300px;
-  border-right: 2px solid #8fb693;
+  border-right: 2px solid #6dbbe0;
   z-index: 1;
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
@@ -304,48 +312,78 @@ footer {
 .sidebar.right {
   left: auto;
   right: 0;
+  border-right: 0;
+  border-left: 2px solid #6dbbe0;
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
-  border-right: 0;
-  border-left: 2px solid #8fb693;
 }
 .sidebar .sidebar-handle {
-  border: 2px solid #8fb693;
-  width: 121px;
+  width: 85px;
   height: 400px;
   position: absolute;
-  top: 40px;
-  right: -125px;
+  top: 15px;
+  right: -85px;
   text-align: center;
 }
+.sidebar .sidebar-handle .fa-lg {
+  font-size: 2.5em;
+}
 .sidebar .sidebar-handle button {
-  background: #729871;
+  background: rgba(255, 255, 255, 0.7);
   border: 0;
-  color: white;
+  color: #6dbbe0;
   outline: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -ms-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   cursor: pointer;
   width: 60px;
   border-radius: 50%;
   height: 60px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  border: 2px solid #6dbbe0;
+  -webkit-transition: transform .5s linear, color .3s linear, backgroundColor .3s linear;
+  -moz-transition: transform .5s linear, color .3s linear, backgroundColor .3s linear;
+  -ms-transition: transform .5s linear, color .3s linear, backgroundColor .3s linear;
+  -o-transition: transform .5s linear, color .3s linear, backgroundColor .3s linear;
 }
-.sidebar .sidebar-handle button:hover {
-  background: #86BA8B;
-  color: #3F7D3E;
-  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+.sidebar .sidebar-handle button:hover,
+.sidebar .sidebar-handle button.active {
+  background: #6dbbe0;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(100, 100, 100, 0.5);
+}
+.sidebar .sidebar-handle .secondary-btn {
+  -webkit-transform: translateY(-600%);
+  -moz-transform: translateY(-600%);
+  -ms-transform: translateY(-600%);
+  -o-transform: translateY(-600%);
+}
+body.open .sidebar-handle .secondary-btn {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
 }
 body.open .sidebar.main {
   transform: translateX(0);
 }
+body.open .sh-inner {
+  height: 360px;
+}
 body.advanced .sidebar.advanced {
   transform: translateX(0);
 }
+.sh-inner {
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: height 0.5s linear;
+  -moz-transition: height 0.5s linear;
+  -ms-transition: height 0.5s linear;
+  -o-transition: height 0.5s linear;
+}
+/* End Sidebar */
+/* Form Stuff */
 #form {
   height: 100%;
 }
@@ -355,15 +393,6 @@ body.advanced .sidebar.advanced {
 .custom-field-header {
   margin: 15px 0 5px 0;
   text-align: center;
-}
-.form-actions {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: white;
-  border-top: 2px solid #8fb693;
 }
 .form-field {
   margin-bottom: 7px;
@@ -382,7 +411,6 @@ body.advanced .sidebar.advanced {
   width: 95%;
   border: 1px solid #bbbbbb;
   font-size: 14px;
-  font-family: sans-serif;
   padding: 5px;
   outline: none;
 }
@@ -425,6 +453,7 @@ body.advanced .sidebar.advanced {
 .form-field.custom {
   padding-bottom: 10px;
 }
+/* End Form Stuff */
 #LaunchFrame {
   position: fixed;
   top: 0;

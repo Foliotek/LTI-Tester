@@ -3,6 +3,7 @@
 	var $body = $("body");
 	$('#btn-config').on('click', function () {
 		$body.toggleClass('open');
+		$(this).toggleClass('active');
 		if (!$body.is('.open')) {
 			$body.removeClass('advanced');
 		}
@@ -12,7 +13,8 @@
 	});
 
 	$("[title]").tooltipster({
-    	theme: 'tooltipster-shadow'
+    	theme: 'tooltipster-shadow',
+    	position: 'right'
 	});
 
 	app.form.init();
