@@ -53,14 +53,13 @@
 		});
 		
 		$("#ls-clear").on('click', function (ev) {
+
+            $form.find(".custom-field:not(:first)").each(function(){
+                $(this).closest(".form-field.custom").remove();
+            });
+            
 			$form.find("input[type=text]").each(function(){
-				
-				if($(this).hasClass("custom-field")){
-					$(this).closest(".form-field.custom").remove();
-				}
-				else{
-					$(this).val('');
-				}
+                $(this).val('');
 			});
 		});
 	}
