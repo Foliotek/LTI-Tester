@@ -70,11 +70,13 @@
 		var html = Mustache.render(template, {
 			field: field
 		});
-		var field = $(html).insertAfter($form.find(".form-field.custom:last"));
+		
 		if (scroll) {
+            field = $(html).insertAfter($form.find(".form-field.custom:last"));
 			$form.find(".sidebar-inner").scrollTo(".form-field.custom:last");
 		}
 		else {
+            field = $(html).insertBefore($form.find(".form-field.custom:last"));
 			var input = $(field.find(".custom-field"));
 			input.changeElementType("label", input.val()).before('<i class="fa fa-edit"></i>');
 		}
@@ -155,7 +157,8 @@
 
 	function bindLocalStorage ($form) {
 		localStorage.clear();
-		var customFields = $form.find(".custom_field").map(function(f, i) {
+		var customFields = $form.find(".custom-field").map(function(f, i) {
+            log($(i).val());
 			return $(i).val();
 		}).toArray();
 		localStorage.setItem('tester_custom_fields', customFields.join(','));
