@@ -42,7 +42,8 @@ module.exports = function (grunt) {
 			dist: {
 				files: [
 					{ expand: true, flatten: true, src:'*.html', dest:'./dist/', filter: 'isFile' },
-					{ expand: true, flatten: true, src: 'bower_components/font-awesome/fonts/*.*', dest: './dist/fonts/', filter: 'isFile' }
+					{ expand: true, flatten: true, src: 'bower_components/font-awesome/fonts/*.*', dest: './dist/fonts/', filter: 'isFile' },
+					{ expand: true, flatten: true, src: 'img/*.*', dest: './dist/img/', filter: 'isFile' }
 				]
 			}
 		},
