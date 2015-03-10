@@ -221,6 +221,19 @@ textarea {
 }
 /* Variables */
 /* End Variables */
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 html {
   height: 100%;
 }
@@ -456,32 +469,6 @@ body.advanced .sidebar.advanced {
 .form-field input[type='text'].custom-field {
   margin-bottom: 10px;
 }
-.form-field input[type='text'].custom-value {
-  width: 85%;
-}
-.form-field .input-group {
-  font-size: 0;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline;
-}
-.form-field .input-group button.btn-remove {
-  background: #bbb;
-  border: 0 none;
-  color: white;
-  outline: none;
-  transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
-  cursor: pointer;
-  width: 10%;
-  height: 31px;
-  vertical-align: top;
-}
-.form-field .input-group button.btn-remove:hover {
-  background: #999;
-  color: #444;
-}
 .form-field i.fa-edit {
   cursor: pointer;
   color: #777;
@@ -506,6 +493,7 @@ body.advanced .sidebar.advanced {
 }
 #LaunchFrame.loaded {
   opacity: 1;
+  background: white;
 }
 .debug-field strong {
   color: #444;
@@ -521,4 +509,63 @@ pre {
 }
 .hide {
   display: none;
+}
+/* Experimental remove button */
+.form-field.custom {
+  /*
+  .input-wrap {
+    width: 80%;
+    float: left;
+  }
+
+  .btn-wrap {
+    float: left;
+    height: 80%;
+    margin-top: 10%;
+    margin-left: 10px;
+    border-left: 2px solid @blue;
+
+    button {
+      background: none;
+      border: 0;
+      font-size: 20px;
+      color: @blue;
+      outline: 0;
+    }
+  }
+  */
+}
+.form-field.custom .input-group {
+  font-size: 0;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline;
+}
+.form-field.custom .input-group button.btn-remove {
+  background: #6dbbe0;
+  border: 2px solid #6dbbe0;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.form-field.custom .input-group button.btn-remove:hover {
+  background: white;
+  color: #6dbbe0;
+}
+.form-field.custom.set .custom-value {
+  width: 85%;
+}
+.form-field.custom.set button.btn-remove {
+  opacity: 1;
+  z-index: 1;
 }

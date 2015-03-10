@@ -9,6 +9,20 @@
 @blue: rgb(109, 187, 224);
 /* End Variables */
 
+.clearfix {
+  &:before,&:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 html {
   height: 100%;
 }
@@ -213,32 +227,6 @@ body.advanced .sidebar.advanced {
     &.custom-field {
         margin-bottom: 10px;
     }
-    &.custom-value {
-        width: 85%;
-    }
-  }
-  .input-group {
-      font-size: 0;
-      line-height: 1;
-      white-space: nowrap;
-      display: inline;
-      button.btn-remove {
-      background: #bbb;
-      border: 0 none;
-      color: white;
-      outline: none;
-      transition: all 0.3s ease 0s;
-      -moz-transition: all 0.3s ease 0s;
-      -webkit-transition: all 0.3s ease 0s;
-      cursor: pointer;
-      width: 10%;
-      height: 31px;
-      vertical-align: top;
-          &:hover {
-            background:  #999;
-            color: #444;
-          }
-      }
   }
   
   i.fa-edit {
@@ -264,6 +252,7 @@ body.advanced .sidebar.advanced {
 
   &.loaded {
     opacity: 1;
+    background: white;
   }
 }
 .debug-field strong {
@@ -283,3 +272,64 @@ pre {
 }
 
 
+/* Experimental remove button */
+.form-field.custom {
+
+  .input-group {
+      font-size: 0;
+      line-height: 1;
+      white-space: nowrap;
+      display: inline;
+
+      button.btn-remove {
+        background: @blue;
+        border: 2px solid @blue;
+        color: white;
+        outline: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        vertical-align: top;
+        opacity: 0;
+        z-index: -1;
+        .transition(all .3s ease 0s);
+
+        &:hover {
+          background:  white;
+          color: @blue;
+        }
+      }
+  }
+
+  &.set {
+    .custom-value {
+      width: 85%;
+    }
+    button.btn-remove {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+/*
+  .input-wrap {
+    width: 80%;
+    float: left;
+  }
+
+  .btn-wrap {
+    float: left;
+    height: 80%;
+    margin-top: 10%;
+    margin-left: 10px;
+    border-left: 2px solid @blue;
+
+    button {
+      background: none;
+      border: 0;
+      font-size: 20px;
+      color: @blue;
+      outline: 0;
+    }
+  }
+  */
+}

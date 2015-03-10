@@ -203,19 +203,21 @@
 		$form.on("blur", "input.custom-field", function (ev) {
 			var input = $(ev.currentTarget);
 			var value = input.val();
-			if(value){
+			if (value) {
+				input.closest(".form-field").addClass("set");
 				input.changeElementType("label", value).before('<i class="fa fa-edit"></i>');
 			}
 		});
 		
 		$form.on("click", "label.custom-field, i.fa-edit", function (ev) {
             var label = $(ev.currentTarget);
-            if($(this).is("i")){
+            if ($(this).is("i")) {
                 label = $(ev.currentTarget).next();
             }
 			
 			var value = label.html();
 			var input = label.changeElementType("input", value);
+			input.closest(".form-field").removeClass("set");
 			input.prev().remove();
 			input.focus();
 		});
