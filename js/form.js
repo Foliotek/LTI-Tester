@@ -7,7 +7,7 @@
 		'resource_link_title',
 		'resource_link_description',
 		'user_id',
-		'roles',
+		{ field: 'roles', required: true },
 		'lis_person_name_full',
 		'lis_person_name_family',
 		'lis_person_name_given',

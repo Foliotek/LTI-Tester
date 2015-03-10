@@ -25,26 +25,34 @@
     <body>
         <div id="bg"></div>
 		<div class="sidebar main">
+        <form id="form" class="content">
 			<div class="sidebar-handle">
                 <div class="sh-inner">
                     <button type="button" class="primary-btn" id="btn-config" title="Configure">
                         <i class="fa fa-th-large fa-lg"></i>
                     </button>
-                    <button id="btn-advanced" class="secondary-btn" title="Show advanced options">
-                        <i class="fa fa-gear fa-lg"></i>
-                    </button>
-                    <button type="button" class="secondary-btn" id="ls-load" title="Load Fields from Local Storage">
+                    <div class="secondary-btn">
+                        <button id="btn-advanced" title="Show advanced options">
+                            <i class="fa fa-gear fa-lg"></i>
+                        </button>
+                    </div>
+                    <div class="secondary-btn">
+                    <button type="button" id="ls-load" title="Load Fields from Local Storage">
                         <i class="fa fa-upload fa-lg"></i>
                     </button>
-                    <button type="button" class="secondary-btn" id="ls-clear" title="Clear Form">
+                    </div>
+                    <div class="secondary-btn">
+                    <button type="button" id="ls-clear" title="Clear Form">
                         <i class="fa fa-minus fa-lg"></i>
                     </button>
-                    <button type="submit" class="secondary-btn" title="Submit" form="form">
+                    </div>
+                    <div class="secondary-btn">
+                    <button type="submit" title="Submit">
                         <i class="fa fa-check fa-lg"></i>
                     </button>
                 </div>
+                </div>
             </div>
-            <form id="form" class="content">
             <div class="sidebar-inner">
                 <div id="field-holder"></div>
                 <h5 class="custom-field-header">Custom Fields</h5>
@@ -52,7 +60,6 @@
                 </div>
             </div>
         </form>
-
 		</div>
         <div class="sidebar right advanced">
             <div class="sidebar-inner">
