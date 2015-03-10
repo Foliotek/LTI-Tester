@@ -236,7 +236,12 @@ body {
 button,
 input {
   font-family: "Open Sans", sans-serif;
+}
+button {
   font-weight: 300;
+}
+input {
+  color: #555555;
 }
 /* Main Page */
 h1 {
@@ -244,7 +249,7 @@ h1 {
   font-size: 60px;
   line-height: 1;
 }
-main.intro {
+section.intro {
   width: 550px;
   margin: 0 auto;
   text-align: center;
