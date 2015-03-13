@@ -107,6 +107,7 @@ footer {
   .sidebar-inner {
     max-height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 15px;
     position: relative;
   }
@@ -282,12 +283,12 @@ pre {
 
       button.btn-remove {
         background: @blue;
-        border: 2px solid @blue;
+        border: 1px solid @blue;
         color: white;
         outline: none;
         cursor: pointer;
-        width: 30px;
-        height: 30px;
+        width: 31px;
+        height: 31px;
         vertical-align: top;
         opacity: 0;
         z-index: -1;
@@ -302,7 +303,8 @@ pre {
 
   &.set {
     .custom-value {
-      width: 85%;
+      width: 82.5%;
+      border-right: none;
     }
     button.btn-remove {
       opacity: 1;
