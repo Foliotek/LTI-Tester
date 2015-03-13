@@ -249,6 +249,7 @@ body {
 button,
 input {
   font-family: "Open Sans", sans-serif;
+  outline: 0;
 }
 button {
   font-weight: 300;
@@ -355,7 +356,6 @@ footer {
   background: rgba(255, 255, 255, 0.7);
   border: 0;
   color: #6dbbe0;
-  outline: none;
   cursor: pointer;
   width: 60px;
   border-radius: 50%;
@@ -461,7 +461,7 @@ body.advanced .sidebar.advanced {
   border: 1px solid #bbbbbb;
   font-size: 14px;
   padding: 5px;
-  outline: none;
+  outline: 0;
 }
 .form-field input[type='text']:focus {
   outline: 0;
@@ -511,30 +511,6 @@ pre {
   display: none;
 }
 /* Experimental remove button */
-.form-field.custom {
-  /*
-  .input-wrap {
-    width: 80%;
-    float: left;
-  }
-
-  .btn-wrap {
-    float: left;
-    height: 80%;
-    margin-top: 10%;
-    margin-left: 10px;
-    border-left: 2px solid @blue;
-
-    button {
-      background: none;
-      border: 0;
-      font-size: 20px;
-      color: @blue;
-      outline: 0;
-    }
-  }
-  */
-}
 .form-field.custom .input-group {
   font-size: 0;
   line-height: 1;
@@ -545,7 +521,6 @@ pre {
   background: #6dbbe0;
   border: 1px solid #6dbbe0;
   color: white;
-  outline: none;
   cursor: pointer;
   width: 31px;
   height: 31px;
