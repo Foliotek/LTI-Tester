@@ -326,6 +326,7 @@ footer {
 .sidebar .sidebar-inner {
   max-height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 15px;
   position: relative;
 }
@@ -543,12 +544,12 @@ pre {
 }
 .form-field.custom .input-group button.btn-remove {
   background: #6dbbe0;
-  border: 2px solid #6dbbe0;
+  border: 1px solid #6dbbe0;
   color: white;
   outline: none;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 31px;
+  height: 31px;
   vertical-align: top;
   opacity: 0;
   z-index: -1;
@@ -563,7 +564,8 @@ pre {
   color: #6dbbe0;
 }
 .form-field.custom.set .custom-value {
-  width: 85%;
+  width: 82.5%;
+  border-right: none;
 }
 .form-field.custom.set button.btn-remove {
   opacity: 1;
