@@ -79,7 +79,7 @@ footer {
   right: 0;
   padding: 5px;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
 }
 #bg {
   position: fixed;
@@ -92,7 +92,13 @@ footer {
   background-position: bottom center;
   z-index: -1;
 }
+.help-btn {
+  padding-top: 10px;
+  font-size: 16px;
+  color: darken(@blue, 25%);
+}
 /* End Main Page */
+
 /* Sidebar */
 .sidebar {
   background: white;
@@ -170,17 +176,26 @@ footer {
       .transitionDelay(.6s);
     }
   }
+  &.help {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+  }
 }
 body.open {
   .sidebar.main {
-    transform: translateX(0);
+    .transform(translateX(0));
   }
   .sidebar-handle .secondary-btn {
     .transform(translateX(0px));
   }
 }
 body.advanced .sidebar.advanced {
-  transform: translateX(0);
+  .transform(translateX(0));
+}
+body.help .sidebar.help {
+  .transform(translateX(0));
 }
 .sh-inner {
   position: relative;
@@ -255,10 +270,19 @@ body.advanced .sidebar.advanced {
     background: white;
   }
 }
-.debug-field strong {
-  color: #444;
-  font-weight: 600;
-  font-size: 14px;
+section {
+  h2 {
+    color: #111;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 25px 0 10px 0;
+  }
+  p {
+    margin-top: 0;
+  }
+  &:first-child h2 {
+    margin-top: 0;
+  }
 }
 pre {
   background: #eaeaea;

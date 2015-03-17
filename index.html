@@ -71,20 +71,42 @@
 		</div>
         <div class="sidebar right advanced">
             <div class="sidebar-inner">
-				<div class="content">
-					<div class="debug-field">
-						<strong>Shareable Link</strong>
-						<pre id="debug-link"></pre>
-					</div>
-					<div class="debug-field">
-						<strong>Signature Base</strong>
-						<pre id="debug-signature-base"></pre>
-					</div>
-					<div class="debug-field">
-						<strong>Signature</strong>
-						<pre id="debug-signature"></pre>
-					</div>
-				</div>
+				<section>
+					<h2>Shareable Link</h2>
+					<pre id="debug-link"></pre>
+				</section>
+				<section>
+					<h2>Signature Base</h2>
+					<pre id="debug-signature-base"></pre>
+				</section>
+				<section>
+					<h2>Signature</h2>
+					<pre id="debug-signature"></pre>
+				</section>
+            </div>
+        </div>
+        <div class="sidebar right help">
+            <div class="sidebar-inner">
+                <section>
+                    <h2>What is LTI?</h2>
+                    <p>Here is a description of LTI</p>
+                </section>
+                <section>
+                    <h2>How can I integrate with Foliotek?</h2>
+                    <p>
+                        See our help: <a href="http://help.foliotek.com/assessment/admin/integration/learning-tools-interoprability/connecting-to-foliotek-with-lti">Foliotek LTI Help</a>
+                </p>
+                </section>
+                <section>
+                    <h2>Are you guys storing my information?</h2>
+                    <p>
+                        We only store your information in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">localStorage</a>.  Basically, it only exists inside your browser.  Even then, we don't store your secret.  If you're really concerned, you can view the code on <a href="http://github.com/foliotek/LTI-Tester">Github</a>.
+                    </p>
+                </section>
+                <section>
+                    <h2>What about the shareable links?</h2>
+                    <p>Those are generated using the <a href="http://dev.bitly.com/">Bitly API</a>, and even then we don't store anything.  We just serialize the form, and append it to the query string.  Again, the secret isn't included in this information</p>
+                </section>
             </div>
         </div>
   
@@ -93,10 +115,14 @@
             <p>Enter your data in the configuration on the left, and click the submit button to begin</p>
 
             <button class="hero-btn">Get Started</button>
+            <br />
+            <br />
+            <a href="#" class="help-btn inline">What is this?</a>
         </section>
 
         <footer>
-            Built by <a href="http://www.foliotek.com">Foliotek</a> &copy; 2015
+            Built by <a href="http://www.foliotek.com">Foliotek</a> &copy; 2015 
+            &nbsp;&nbsp;This tool is open sourced on <a href="http://github.com/foliotek/LTI-Tester">Github</a>
         </footer>
 
         <!-- Templates -->

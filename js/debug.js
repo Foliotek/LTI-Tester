@@ -52,10 +52,7 @@
 
 	function init ($form) {
 		$form.on('change', 'input', $.throttle(1000, inputChange));
-		$("#btn-advanced").on('click', function (ev) { 
-			ev.preventDefault();
-			$("body").toggleClass("advanced");
-		});
+		
 		$form.on('submit', function (ev) {
 			var data = processForm($form);
 			var b64 = btoa(data.signatureBase);

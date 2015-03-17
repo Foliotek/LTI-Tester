@@ -289,7 +289,7 @@ footer {
   right: 0;
   padding: 5px;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
 }
 #bg {
   position: fixed;
@@ -301,6 +301,11 @@ footer {
   background-size: cover;
   background-position: bottom center;
   z-index: -1;
+}
+.help-btn {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #247faa;
 }
 /* End Main Page */
 /* Sidebar */
@@ -414,7 +419,17 @@ footer {
   -o-transition-delay: 0.6s;
   transition-delay: 0.6s;
 }
+.sidebar.help {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.5;
+}
 body.open .sidebar.main {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
   transform: translateX(0);
 }
 body.open .sidebar-handle .secondary-btn {
@@ -425,6 +440,17 @@ body.open .sidebar-handle .secondary-btn {
   transform: translateX(0px);
 }
 body.advanced .sidebar.advanced {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+body.help .sidebar.help {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
   transform: translateX(0);
 }
 .sh-inner {
@@ -495,10 +521,17 @@ body.advanced .sidebar.advanced {
   opacity: 1;
   background: white;
 }
-.debug-field strong {
-  color: #444;
+section h2 {
+  color: #111;
   font-weight: 600;
   font-size: 14px;
+  margin: 25px 0 10px 0;
+}
+section p {
+  margin-top: 0;
+}
+section:first-child h2 {
+  margin-top: 0;
 }
 pre {
   background: #eaeaea;
