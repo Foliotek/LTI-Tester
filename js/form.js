@@ -130,7 +130,7 @@
 
 		var formEl = $(formHtml).appendTo("body");
 		formEl.submit();
-		$("body").removeClass('advanced open');
+		$("body").removeClass('advanced open help');
 		setTimeout(function () {
 			formEl.remove();
 		}, 1000);
