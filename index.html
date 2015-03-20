@@ -89,13 +89,42 @@
             <div class="sidebar-inner">
                 <section>
                     <h2>What is LTI?</h2>
-                    <p>Here is a description of LTI</p>
+                    <p><a href="http://www.imsglobal.org/toolsinteroperability2.cfm">Learning Tools Interoperability</a> establishes a standard way of integrating third-party application and services with educational environments.</p>
+
+                    <p>
+                        This is a simple tool to test connecting to third-party applications via LTI.
+                    </p>
                 </section>
                 <section>
                     <h2>How can I integrate with Foliotek?</h2>
                     <p>
                         See our <a href="http://help.foliotek.com/assessment/admin/integration/learning-tools-interoprability/connecting-to-foliotek-with-lti">Foliotek LTI Help</a>
-                </p>
+                    </p>
+                    <table>
+                      <thead>
+                            <tr>
+                              <th colspan="2">Test Parameters</th>
+                            </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>Endpoint</td>
+                            <td>https://secure.foliotek.com/blti</td>
+                        </tr>
+                        <tr>
+                            <td>Key</td>
+                            <td>Foliotek</td>
+                        </tr>
+                        <tr>
+                            <td>Secret</td>
+                            <td>secret</td>
+                        </tr>
+                        <tr>
+                            <td>Roles</td>
+                            <td>Learner</td>
+                        </tr>
+                    </tbody>
+                    </table>
                 </section>
                 <section>
                     <h2>Are you guys storing my information?</h2>
@@ -106,6 +135,10 @@
                 <section>
                     <h2>What about the shareable links?</h2>
                     <p>Those are generated using the <a href="http://dev.bitly.com/">Bitly API</a>, and even then, we don't store anything.  We just serialize the form, and append it to the query string.  Again, the secret isn't included in this information.</p>
+                </section>
+                <section>
+                    <h2>My custom fields aren't custom!?</h2>
+                    <p>We don't prepend "custom_" to the custom field keys. This way you have more options to add additional parameters defined by LTI that we don't provide by default. </p>
                 </section>
             </div>
         </div>
