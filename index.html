@@ -45,20 +45,25 @@
                         </button>
                     </div>
                     <div class="secondary-btn">
-                    <button type="button" id="ls-load" title="Load Fields from Local Storage">
-                        <i class="fa fa-upload fa-lg"></i>
-                    </button>
+                        <button type="button" id="ls-load" title="Load Fields from Local Storage">
+                            <i class="fa fa-upload fa-lg"></i>
+                        </button>
                     </div>
                     <div class="secondary-btn">
-                    <button type="button" id="ls-clear" title="Clear Form">
-                        <i class="fa fa-minus fa-lg"></i>
-                    </button>
+                        <button type="button" id="ls-clear" title="Clear Form">
+                            <i class="fa fa-minus fa-lg"></i>
+                        </button>
                     </div>
                     <div class="secondary-btn">
-                    <button type="submit" title="Submit">
-                        <i class="fa fa-check fa-lg"></i>
-                    </button>
-                </div>
+                        <button type="submit" title="Submit">
+                            <i class="fa fa-check fa-lg"></i>
+                        </button>
+                    </div>
+                    <div class="secondary-btn btm">
+                        <button type="button" title="Help" class="help-btn">
+                            <i class="fa fa-question fa-lg"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="sidebar-inner">
@@ -88,43 +93,22 @@
         <div class="sidebar right help">
             <div class="sidebar-inner">
                 <section>
-                    <h2>What is LTI?</h2>
-                    <p><a href="http://www.imsglobal.org/toolsinteroperability2.cfm">Learning Tools Interoperability</a> establishes a standard way of integrating third-party application and services with educational environments.</p>
-
-                    <p>
+                    <h2>What is this?</h2>
+                     <p>
                         This is a simple tool to test connecting to third-party applications via LTI.
+                    </p>
+                </section>
+                <section>
+                    <h2>What is LTI?</h2>
+                    <p>
+                        <a href="http://www.imsglobal.org/toolsinteroperability2.cfm">Learning Tools Interoperability</a> establishes a standard way of integrating third-party application and services with educational environments.
                     </p>
                 </section>
                 <section>
                     <h2>How can I integrate with Foliotek?</h2>
                     <p>
-                        See our <a href="http://help.foliotek.com/assessment/admin/integration/learning-tools-interoprability/connecting-to-foliotek-with-lti">Foliotek LTI Help</a>
+                        See our <a href="http://help.foliotek.com/assessment/admin/integration/learning-tools-interoprability/connecting-to-foliotek-with-lti">Foliotek LTI Help</a> or you can use these <a href="#" class="test-btn">test values</a>.
                     </p>
-                    <table>
-                      <thead>
-                            <tr>
-                              <th colspan="2">Test Parameters</th>
-                            </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                            <td>Endpoint</td>
-                            <td>https://secure.foliotek.com/blti</td>
-                        </tr>
-                        <tr>
-                            <td>Key</td>
-                            <td>Foliotek</td>
-                        </tr>
-                        <tr>
-                            <td>Secret</td>
-                            <td>secret</td>
-                        </tr>
-                        <tr>
-                            <td>Roles</td>
-                            <td>Learner</td>
-                        </tr>
-                    </tbody>
-                    </table>
                 </section>
                 <section>
                     <h2>Are you guys storing my information?</h2>
@@ -138,7 +122,9 @@
                 </section>
                 <section>
                     <h2>My custom fields aren't custom!?</h2>
-                    <p>We don't prepend "custom_" to the custom field keys. This way you have more options to add additional parameters defined by LTI that we don't provide by default. </p>
+                    <p>
+                        We don't prepend "custom_" to the custom field keys. This way, you can send additional parameters defined by LTI that aren't provided by this tool.
+                    </p>
                 </section>
             </div>
         </div>

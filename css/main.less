@@ -66,6 +66,12 @@ section.intro {
   padding-top: 5%;
   font-size: 1.4em;
   font-weight: 300;
+  
+  .help-btn {
+    padding-top: 10px;
+    font-size: 16px;
+    color: darken(@blue, 25%);
+  }
 }
 .hero-btn {
   color: white;
@@ -97,11 +103,6 @@ footer {
   background-size: cover;
   background-position: bottom center;
   z-index: -1;
-}
-.help-btn {
-  padding-top: 10px;
-  font-size: 16px;
-  color: darken(@blue, 25%);
 }
 /* End Main Page */
 
@@ -135,13 +136,17 @@ footer {
 
   .sidebar-handle {
     width: 85px;
-    height: 400px;
     position: absolute;
     top: 15px;
     right: -85px;
+    bottom: 0;
     text-align: center;
   }
-
+  .sh-inner {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
   .sidebar-handle .fa-lg {
     font-size: 2.5em;
   }
@@ -169,6 +174,12 @@ footer {
     .transition(transform .1s linear);
     .transform(translateX(-100px));
 
+    &.btm {
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+    }
+
     &:nth-child(2) {
       .transitionDelay(.3s);
     }
@@ -180,6 +191,9 @@ footer {
     }
     &:nth-child(5) {
       .transitionDelay(.6s);
+    }
+    &:nth-child(6) {
+      .transitionDelay(.7s);
     }
   }
   &.help {
@@ -202,10 +216,6 @@ body.advanced .sidebar.advanced {
 }
 body.help .sidebar.help {
   .transform(translateX(0));
-}
-.sh-inner {
-  position: relative;
-  overflow: hidden;
 }
 /* End Sidebar */
 

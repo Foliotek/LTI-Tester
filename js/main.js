@@ -19,6 +19,16 @@
 		ev.preventDefault();
 		$body.toggleClass('help').removeClass('advanced');
 	});
+	$('.test-btn').on('click', function (ev) {
+		var values = {
+			'endpoint': 'https://secure.foliotek.com/blti',
+			'secret': 'secret',
+			'oauth_consumer_key': 'Foliotek',
+			'roles': 'Learner'
+		};
+		app.form.fillValues(values);
+		$body.addClass('open');
+	});
 
 	$("[title]").tooltipster({
     	theme: 'tooltipster-shadow',

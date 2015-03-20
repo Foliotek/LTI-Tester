@@ -35,10 +35,7 @@
 			data[nvp[0]] = nvp[1];
 		});
 
-		console.log("loading from", data);
-		Object.keys(data).forEach(function (k) {
-			form.find("[name=" + k + "]").val(oauth_decode(data[k]));
-		});
+		app.form.fillValues(data);
 		$("body").addClass("open");
 	}
 

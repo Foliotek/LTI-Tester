@@ -277,6 +277,11 @@ section.intro {
   font-size: 1.4em;
   font-weight: 300;
 }
+section.intro .help-btn {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #247faa;
+}
 .hero-btn {
   color: white;
   border-radius: 5px;
@@ -307,11 +312,6 @@ footer {
   background-size: cover;
   background-position: bottom center;
   z-index: -1;
-}
-.help-btn {
-  padding-top: 10px;
-  font-size: 16px;
-  color: #247faa;
 }
 /* End Main Page */
 /* Sidebar */
@@ -354,11 +354,16 @@ footer {
 }
 .sidebar .sidebar-handle {
   width: 85px;
-  height: 400px;
   position: absolute;
   top: 15px;
   right: -85px;
+  bottom: 0;
   text-align: center;
+}
+.sidebar .sh-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 .sidebar .sidebar-handle .fa-lg {
   font-size: 2.5em;
@@ -397,6 +402,11 @@ footer {
   -o-transform: translateX(-100px);
   transform: translateX(-100px);
 }
+.sidebar .sidebar-handle .secondary-btn.btm {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
 .sidebar .sidebar-handle .secondary-btn:nth-child(2) {
   -webkit-transition-delay: 0.3s;
   -moz-transition-delay: 0.3s;
@@ -424,6 +434,13 @@ footer {
   -ms-transition-delay: 0.6s;
   -o-transition-delay: 0.6s;
   transition-delay: 0.6s;
+}
+.sidebar .sidebar-handle .secondary-btn:nth-child(6) {
+  -webkit-transition-delay: 0.7s;
+  -moz-transition-delay: 0.7s;
+  -ms-transition-delay: 0.7s;
+  -o-transition-delay: 0.7s;
+  transition-delay: 0.7s;
 }
 .sidebar.help {
   font-size: 14px;
@@ -458,10 +475,6 @@ body.help .sidebar.help {
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-}
-.sh-inner {
-  position: relative;
-  overflow: hidden;
 }
 /* End Sidebar */
 /* Form Stuff */

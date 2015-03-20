@@ -234,4 +234,11 @@
 		bindCustomFields($form);
 	};
 
+	app.form.fillValues = function (values) {
+		var $form = $("#form");
+		Object.keys(values).forEach(function (k) {
+			$form.find("[name=" + k + "]").val(oauth_decode(values[k]));
+		});
+	};
+
 })(app);
