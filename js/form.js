@@ -1,4 +1,5 @@
 (function (app){
+	var F_PRE = "field_";
 	var requiredFields = [
 		{ field: 'endpoint', required: true },
 		{ field: 'oauth_consumer_key', required: true },
@@ -48,7 +49,8 @@
 			});
 
 			Object.keys(localStorage).forEach(function (k) {
-				$form.find("input[name='" + k +"']").val(localStorage.getItem(k)).trigger("change");
+				var name = k.replace(F_PRE, '');
+				$form.find("input[name='" + name +"']").val(localStorage.getItem(k)).trigger("change");
 			});
 		});
 		
@@ -130,7 +132,7 @@
 
 		var formEl = $(formHtml).appendTo("body");
 		formEl.submit();
-		$("body").removeClass('advanced open help');
+		$("body").removeClass('advanced open help histories');
 		setTimeout(function () {
 			formEl.remove();
 		}, 1000);
@@ -152,6 +154,7 @@
 			}
 			bindLocalStorage($form);
 			newOauth($form);
+			app.history.add($form.serializeObject());
 		});
 	}
 
@@ -165,9 +168,14 @@
 		
 		$("input[name]").each(function (){
 			var input = $(this);
-			var name = input.attr("name");
+			var name = F_PRE + input.attr("name");
 			var val = input.val();
-			localStorage.setItem(name, val);
+			if (val) {
+				localStorage.setItem(name, val);
+			}
+			else {
+				localStorage.removeItem(name);
+			}
 		});
 	}
 	

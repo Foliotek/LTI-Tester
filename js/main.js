@@ -30,6 +30,10 @@
 		app.form.fillValues(values);
 		$body.addClass('open');
 	});
+	$(".hist-btn").on('click', function (ev) {
+		ev.preventDefault();
+		$body.toggleClass('histories');
+	});
 
 	$("[title]").tooltipster({
     	theme: 'tooltipster-shadow',
@@ -38,4 +42,5 @@
 
 	app.form.init();
 	app.debug.init($("#form"));
+	app.history.init();
 })();

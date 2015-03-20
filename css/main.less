@@ -66,7 +66,7 @@ section.intro {
   padding-top: 5%;
   font-size: 1.4em;
   font-weight: 300;
-  
+
   .help-btn {
     padding-top: 10px;
     font-size: 16px;
@@ -170,16 +170,17 @@ footer {
       text-shadow: 1px 1px 0px rgba(100, 100, 100, 0.5);
     }
   }
+  .btm {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+  }
   .sidebar-handle .secondary-btn {
     .transition(transform .1s linear);
     .transform(translateX(-100px));
+  }
 
-    &.btm {
-      position: absolute;
-      bottom: 0;
-      left: 15px;
-    }
-
+  .sh-inner > .secondary-btn {
     &:nth-child(2) {
       .transitionDelay(.3s);
     }
@@ -192,9 +193,9 @@ footer {
     &:nth-child(5) {
       .transitionDelay(.6s);
     }
-    &:nth-child(6) {
-      .transitionDelay(.7s);
-    }
+  }
+  .btm .secondary-btn {
+    .transitionDelay(.8s);
   }
   &.help {
     font-size: 14px;
@@ -211,10 +212,9 @@ body.open {
     .transform(translateX(0px));
   }
 }
-body.advanced .sidebar.advanced {
-  .transform(translateX(0));
-}
-body.help .sidebar.help {
+body.advanced .sidebar.advanced,
+body.help .sidebar.help,
+body.histories .sidebar.histories {
   .transform(translateX(0));
 }
 /* End Sidebar */
@@ -311,6 +311,29 @@ pre {
   display: none;
 }
 
+/* Histories */
+#histories { 
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: -10px;
+    margin-top: 10px;
+
+    li {
+      background: #f5f5f5;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .clear-hist {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+/* End Histories */
 
 /* Experimental remove button */
 .form-field.custom {

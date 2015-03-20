@@ -59,10 +59,17 @@
                             <i class="fa fa-check fa-lg"></i>
                         </button>
                     </div>
-                    <div class="secondary-btn btm">
-                        <button type="button" title="Help" class="help-btn">
-                            <i class="fa fa-question fa-lg"></i>
-                        </button>
+                    <div class="btm">
+                        <div class="secondary-btn">
+                            <button type="button" title="History" class="hist-btn">
+                                <i class="fa fa-history fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="secondary-btn">
+                            <button type="button" title="Help" class="help-btn">
+                                <i class="fa fa-question fa-lg"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,6 +135,16 @@
                 </section>
             </div>
         </div>
+
+        <div class="sidebar right histories">
+            <div class="sidebar-inner" id="histories">
+                <section>
+                    <h2>History</h2>
+                    <ul></ul>
+                </section>
+                <a href="#" class="clear-hist">Clear</a>
+            </div>
+        </div>
   
         <section class="intro">
             <h1>LTI Tester</h1>
@@ -164,6 +181,11 @@
         <script type="text/template" id="iframe-template">
             <iframe id="LaunchFrame" name="LaunchFrame" class="LaunchFrame" width="100%" srolling="auto" frameborder="1" transparency></iframe>
         </script>
+        <script type="text/template" id="histories-template">
+            {{#histories}}
+            <li><a href="#" data-hist="{{id}}">{{name}}</a></li>
+            {{/histories}}
+        </script>
         <!-- End Templates -->
 
         <script>
@@ -178,6 +200,7 @@
         <script src="js/common.js"></script>
         <script src="js/form.js"></script>
         <script src="js/debug.js"></script>
+        <script src="js/history.js"></script>
         <script src="js/main.js"></script>
         <!-- endbuild -->
 
