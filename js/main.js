@@ -20,6 +20,7 @@
 		$body.toggleClass('help').removeClass('advanced');
 	});
 	$('.test-btn').on('click', function (ev) {
+		ev.preventDefault();
 		var values = {
 			'endpoint': 'https://secure.foliotek.com/blti',
 			'secret': 'secret',

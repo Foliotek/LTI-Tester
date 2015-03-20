@@ -89,9 +89,11 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'less:development', 
 		'connect:dev', 
-		'watch']);
+		'watch'
+	]);
 
-	grunt.registerTask('prod', [
+	var prodWatch = grunt.option('nowatch');
+	var prodTasks = [
 		'clean',
 		'copy',
 		'useminPrepare', 
@@ -99,7 +101,10 @@ module.exports = function (grunt) {
 		'uglify:generated',
 		'less:dist',
 		'cssmin:generated',
-		'usemin', 
-		'connect:dist'
-		]);
+		'usemin'
+	];
+	if (!prodWatch) {
+		prodTasks.push('connect:dist');
+	}
+	grunt.registerTask('prod', prodTasks);
 };
