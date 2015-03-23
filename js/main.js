@@ -10,14 +10,19 @@
 	});
 	$("#btn-advanced").on('click', function (ev) { 
 		ev.preventDefault();
-		$body.toggleClass("advanced").removeClass('help');
+		$body.toggleClass("advanced").removeClass('help').removeClass('histories');
 	});
 	$('.hero-btn').on('click', function () {
 		$body.addClass('open');
 	});
+	$(".hist-btn").on('click', function (ev) {
+		ev.preventDefault();
+		$body.toggleClass('histories').removeClass('advanced').removeClass('help');
+	});
+
 	$('.help-btn').on('click', function (ev) {
 		ev.preventDefault();
-		$body.toggleClass('help').removeClass('advanced');
+		$body.toggleClass('help').removeClass('advanced').removeClass('histories');
 	});
 	$('.test-btn').on('click', function (ev) {
 		ev.preventDefault();
@@ -29,10 +34,6 @@
 		};
 		app.form.fillValues(values);
 		$body.addClass('open');
-	});
-	$(".hist-btn").on('click', function (ev) {
-		ev.preventDefault();
-		$body.toggleClass('histories');
 	});
 
 	$("[title]").tooltipster({
