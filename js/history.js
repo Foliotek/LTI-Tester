@@ -29,6 +29,7 @@
 			app.form.fillValues(item.data);
 		});
 		el.on('click', '.clear-hist', function (ev) {
+			_requests = {};
 			localStorage.removeItem(LS_KEY);
 			el.find("ul").html("");
 		});
