@@ -172,7 +172,7 @@
             <div class="form-field custom">
                 <input class="custom-field" type="text" placeholder="[Enter Key]" value="{{field}}" />
                 <div class="input-group">
-                <input class="custom-value" type="text" placeholder="[Enter Value]" name="{{field}}" />
+                <input class="custom-value" type="text" placeholder="[Enter Value]" name="{{field}}" value="{{value}}" />
                 <button type="button" class="btn-remove">
                     <i class="fa fa-remove fa-lg"></i>
                 </button>
@@ -185,6 +185,14 @@
             {{#histories}}
             <li><a href="#" data-hist="{{id}}">{{name}}</a></li>
             {{/histories}}
+        </script>
+        <script type="text/template" id="oauth-form-template">
+        <form method="{{method}}" action="{{{action}}}" target="{{target}}" enctype="application/x-www-form-urlencoded">
+
+            {{#fields}}
+                <input type="hidden" name="{{name}}" value="{{val}}" />
+            {{/fields}}
+        </form>
         </script>
         <!-- End Templates -->
 

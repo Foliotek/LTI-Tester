@@ -22,10 +22,12 @@
 		var html = Mustache.render(template, { histories: data });
 		el.find("ul").html(html);
 	}
+	
 	function bind() {
 		el.on('click', 'ul li a', function (ev) {
 			var id = $(ev.currentTarget).data("hist");
 			var item = _requests[id];
+			console.log(item.data);
 			app.form.fillValues(item.data);
 		});
 		el.on('click', '.clear-hist', function (ev) {

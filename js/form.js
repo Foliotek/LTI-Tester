@@ -18,41 +18,44 @@
 		'context_title',
 		'context_label'
 	];
+	var oauthFormTemplate = $("#oauth-form-template").html();
+	var iFrameTemplate = $("#iframe-template").html();
+	var customFieldTemplate = $("#custom-field-template").html();
+	var formFieldTemplate = $("#form-field-template").html();
 
 	function render ($form) {
-		var template = $("#form-field-template").html();
 		var fieldHtml = requiredFields.map(function (f) { // uses native array map.  Won't work in new browsers
 			if (typeof(f) === 'string') {
 				f = { field: f };
 			}
-			return Mustache.render(template, f);
+			return Mustache.render(formFieldTemplate, f);
 		}).join('');
 		$("#field-holder").append(fieldHtml);
 		
 		
-		$("#ls-load").on('click', function (ev) {
-			ev.preventDefault();
+		// $("#ls-load").on('click', function (ev) {
+		// 	ev.preventDefault();
 
-			var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
-			custom_fields.forEach(function (f) {
-				var exists = false;
-				$(".custom-field").each(function(){
-					if($(this).val() === f){
-						exists = true;
-						return;
-					}
-				});
+		// 	var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
+		// 	custom_fields.forEach(function (f) {
+		// 		var exists = false;
+		// 		$(".custom-field").each(function(){
+		// 			if($(this).val() === f){
+		// 				exists = true;
+		// 				return;
+		// 			}
+		// 		});
 				
-				if(!exists && f !== ''){					
-					renderAdd($form, f);
-				}
-			});
+		// 		if(!exists && f !== ''){					
+		// 			renderCustomField($form, f);
+		// 		}
+		// 	});
 
-			Object.keys(localStorage).forEach(function (k) {
-				var name = k.replace(F_PRE, '');
-				$form.find("input[name='" + name +"']").val(localStorage.getItem(k)).trigger("change");
-			});
-		});
+		// 	Object.keys(localStorage).forEach(function (k) {
+		// 		var name = k.replace(F_PRE, '');
+		// 		$form.find("input[name='" + name +"']").val(localStorage.getItem(k)).trigger("change");
+		// 	});
+		// });
 		
 		$("#ls-clear").on('click', function (ev) {
 
@@ -66,11 +69,11 @@
 		});
 	}
 
-	function renderAdd($form, field) {
+	function renderCustomField($form, field, val) {
 		var scroll = field === undefined;
-		var template = $("#custom-field-template").html();
-		var html = Mustache.render(template, {
-			field: field
+		var html = Mustache.render(customFieldTemplate, {
+			field: field,
+			value: val
 		});
 		
 		if (scroll) {
@@ -86,7 +89,7 @@
 		return field;
 	}
 
-	function newOauth($form) {
+	function submitOauthForm($form) {
 		var formObj = $form.serializeObject();
 		var secret = formObj['secret'];
 		var endpoint = formObj['endpoint'];
@@ -99,13 +102,8 @@
 			parameters: formObj
 		});
 
-		var formTemplate = '<form method="{{method}}" action="{{{action}}}" target="{{target}}" '
-		+ 'enctype="application/x-www-form-urlencoded">'
-		+ '{{#fields}}<input type="hidden" name="{{name}}" value="{{val}}" />{{/fields}}'
-		+ '</form>';
-
 		var reqData = req.getRequestData({ secret: secret });
-		var formHtml = Mustache.render(formTemplate, {
+		var formHtml = Mustache.render(oauthFormTemplate, {
 			method: req.method,
 			action: req.action,
 			target: 'LaunchFrame',
@@ -118,7 +116,7 @@
 		});
 
 		var existing = $("#LaunchFrame");
-		var newIframe = $($("#iframe-template").html());
+		var newIframe = $(iFrameTemplate);
 		if (existing.length) {
 			existing.replaceWith(newIframe);
 		}
@@ -152,30 +150,8 @@
 				}, 3000);
 				return false;
 			}
-			bindLocalStorage($form);
-			newOauth($form);
 			app.history.add($form.serializeObject());
-		});
-	}
-
-	function bindLocalStorage ($form) {
-		localStorage.clear();
-		var customFields = $form.find(".custom-field").map(function(f, i) {
-            log($(i).val());
-			return $(i).val();
-		}).toArray();
-		localStorage.setItem('tester_custom_fields', customFields.join(','));
-		
-		$("input[name]").each(function (){
-			var input = $(this);
-			var name = F_PRE + input.attr("name");
-			var val = input.val();
-			if (val) {
-				localStorage.setItem(name, val);
-			}
-			else {
-				localStorage.removeItem(name);
-			}
+			submitOauthForm($form);
 		});
 	}
 	
@@ -184,7 +160,7 @@
 		$form.on('keyup', '.form-field.custom:last input.custom-value', function (ev) {
 			var input = $(ev.currentTarget);
 			if (input.val()) {
-				renderAdd($form);
+				renderCustomField($form);
 			}
 		});
 		
@@ -230,7 +206,7 @@
 			input.focus();
 		});
 
-		$("#custom-field-holder").html(Mustache.render($("#custom-field-template").html()));
+		$("#custom-field-holder").html(Mustache.render(customFieldTemplate));
 	}
 
 	app.form = {};
@@ -245,7 +221,13 @@
 	app.form.fillValues = function (values) {
 		var $form = $("#form");
 		Object.keys(values).forEach(function (k) {
-			$form.find("[name=" + k + "]").val(oauth_decode(values[k]));
+			var input = $form.find("[name=" + k + "]");
+			if (input.length > 0) {
+				input.val(oauth_decode(values[k]));
+			}
+			else {
+				renderCustomField($form, k, values[k]);
+			}
 		});
 	};
 
