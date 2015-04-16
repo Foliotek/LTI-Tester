@@ -77,7 +77,12 @@
 		});
 		
 		if (scroll) {
-            field = $(html).insertAfter($form.find(".form-field.custom:last"));
+			if ($form.find('.form-field.custom').length > 0) {
+            	field = $(html).insertAfter($form.find(".form-field.custom:last"));
+			}
+			else {
+				field = $(html).appendTo("#custom-field-holder");
+			}
 			$form.find(".sidebar-inner").scrollTo(".form-field.custom:last");
 		}
 		else {
@@ -220,6 +225,8 @@
 
 	app.form.fillValues = function (values) {
 		var $form = $("#form");
+		$("#custom-field-holder").html("");
+		renderCustomField($form);
 		Object.keys(values).forEach(function (k) {
 			var input = $form.find("[name=" + k + "]");
 			if (input.length > 0) {
