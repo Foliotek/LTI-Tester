@@ -320,10 +320,31 @@ pre {
     margin-top: 10px;
 
     li {
-      background: #f5f5f5;
+      background: #fafafa;
       padding: 5px;
       margin-bottom: 5px;
+      border: 1px solid #e0e0e0;
     }
+  }
+  a {
+    text-decoration: none;
+    color: @blue;
+
+    &.right {
+      float: right;
+      padding: 2px 5px 0 5px;
+    }
+  }
+  .edit-field {
+    display: none;
+  }
+  li.editing {
+   .edit-field {
+      display: inline-block;
+    }
+    .view {
+      display: none;
+    }  
   }
   .clear-hist {
     position: absolute;
@@ -331,6 +352,10 @@ pre {
     right: 20px;
     font-size: 12px;
     text-transform: uppercase;
+  }
+  input {
+    font-size: 15px;
+    padding: 0 2px;
   }
 }
 /* End Histories */

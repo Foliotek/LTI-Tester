@@ -44,11 +44,11 @@
                             <i class="fa fa-gear fa-lg"></i>
                         </button>
                     </div>
-                    <div class="secondary-btn">
+<!--                     <div class="secondary-btn">
                         <button type="button" id="ls-load" title="Load Fields from Local Storage">
                             <i class="fa fa-upload fa-lg"></i>
                         </button>
-                    </div>
+                    </div> -->
                     <div class="secondary-btn">
                         <button type="button" id="ls-clear" title="Clear Form">
                             <i class="fa fa-minus fa-lg"></i>
@@ -183,7 +183,13 @@
         </script>
         <script type="text/template" id="histories-template">
             {{#histories}}
-            <li><a href="#" data-hist="{{id}}">{{name}}</a></li>
+                <li data-hist="{{id}}">
+                    <a href="#" class="view main">{{name}}</a>
+                    <a href="#" class="view right remove fa fa-remove"></a>
+                    <a href="#" class="view right js-edit fa fa-pencil"></a>
+                    <input type="text" value="{{name}}" class="edit-field js-hist-name" />
+                    <button class="edit-field js-save-name fa fa-check"></button>
+                </li>
             {{/histories}}
         </script>
         <script type="text/template" id="oauth-form-template">

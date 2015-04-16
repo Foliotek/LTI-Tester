@@ -565,9 +565,27 @@ pre {
   margin-top: 10px;
 }
 #histories ul li {
-  background: #f5f5f5;
+  background: #fafafa;
   padding: 5px;
   margin-bottom: 5px;
+  border: 1px solid #e0e0e0;
+}
+#histories a {
+  text-decoration: none;
+  color: #6dbbe0;
+}
+#histories a.right {
+  float: right;
+  padding: 2px 5px 0 5px;
+}
+#histories .edit-field {
+  display: none;
+}
+#histories li.editing .edit-field {
+  display: inline-block;
+}
+#histories li.editing .view {
+  display: none;
 }
 #histories .clear-hist {
   position: absolute;
@@ -575,6 +593,10 @@ pre {
   right: 20px;
   font-size: 12px;
   text-transform: uppercase;
+}
+#histories input {
+  font-size: 15px;
+  padding: 0 2px;
 }
 /* End Histories */
 /* Experimental remove button */

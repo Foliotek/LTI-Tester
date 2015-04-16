@@ -22,13 +22,35 @@
 		var html = Mustache.render(template, { histories: data });
 		el.find("ul").html(html);
 	}
+
+	function update() {
+		localStorage.setItem(LS_KEY, JSON.stringify(_requests));
+		render();
+	}
 	
 	function bind() {
 		el.on('click', 'ul li a', function (ev) {
-			var id = $(ev.currentTarget).data("hist");
-			var item = _requests[id];
-			console.log(item.data);
-			app.form.fillValues(item.data);
+			var li = $(ev.currentTarget).closest("[data-hist]"),
+				id = li.data("hist"),
+				lnk = $(this);
+			if (lnk.is(".main")) {
+				var item = _requests[id];
+				app.form.fillValues(item.data);
+			}
+			else if (lnk.is(".remove")) {
+				delete _requests[id];
+				update();
+			}
+			else if (lnk.is(".js-edit")) {
+				log(li);
+				li.addClass("editing");
+			}
+		});
+		el.on('click', 'ul li button', function (ev) {
+			var li = $(ev.currentTarget).closest("[data-hist]"),
+				id = li.data("hist");
+			_requests[id].name = li.find(".js-hist-name").val();
+			update();
 		});
 		el.on('click', '.clear-hist', function (ev) {
 			_requests = {};
@@ -56,11 +78,11 @@
 		var hist = {
 			id: id,
 			name: name,
-			data: h
+			data: h,
+			date: name
 		};
 		_requests[id] = hist;
-		localStorage.setItem(LS_KEY, JSON.stringify(_requests));
-		render();
+		update();
 	};
 
 })(app);
