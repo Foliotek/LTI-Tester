@@ -45,12 +45,13 @@
 				log(li);
 				li.addClass("editing");
 			}
-		});
-		el.on('click', 'ul li .js-save-name', function (ev) {
-			var li = $(ev.currentTarget).closest("[data-hist]"),
-				id = li.data("hist");
-			_requests[id].name = li.find(".js-hist-name").val();
-			update();
+            else if (lnk.is(".js-save-name")) {
+                _requests[id].name = li.find(".js-hist-name").val();
+                update();
+			}
+            else if (lnk.is(".cancel")) {
+                render();
+			}
 		});
 		el.on('click', '.clear-hist', function (ev) {
 			_requests = {};
