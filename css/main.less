@@ -7,6 +7,8 @@
 @btnGreen: #729871;
 @openSans: "Open Sans", sans-serif;
 @blue: rgb(109, 187, 224);
+@gray7: #777777;
+@greyb: #bbbbbb;
 /* End Variables */
 
 .clearfix {
@@ -238,7 +240,7 @@ body.histories .sidebar.histories {
     display: inline;
     font-size: 10px;
     font-weight: 600;
-    color: #777;
+    color: @gray7;
     text-transform: uppercase;
     &.custom-field {
         cursor: pointer;
@@ -247,7 +249,7 @@ body.histories .sidebar.histories {
 
   input[type='text'] {
     width: 95%;
-    border: 1px solid rgb(187, 187, 187);
+    border: 1px solid @greyb;
     font-size: 14px;
     padding: 5px;
     outline: 0;
@@ -262,7 +264,7 @@ body.histories .sidebar.histories {
   
   i.fa-edit {
       cursor: pointer;
-      color: #777;
+      color: @gray7;
   }
   &.custom {
     padding-bottom: 10px;
@@ -320,19 +322,23 @@ pre {
     margin-top: 10px;
 
     li {
-      background: #fafafa;
+      //background: #fafafa;
       padding: 5px;
       margin-bottom: 5px;
-      border: 1px solid #e0e0e0;
+      border-bottom: 1px solid @greyb;
     }
   }
   a {
     text-decoration: none;
-    color: @blue;
+    color: @gray7;
+    font-size: 14px;
+    font-weight: 600;
 
     &.right {
       float: right;
       padding: 2px 5px 0 5px;
+      color: @blue;
+      font-weight: normal;
     }
   }
   .edit-field {
@@ -353,9 +359,16 @@ pre {
     font-size: 12px;
     text-transform: uppercase;
   }
-  input {
+  input[type='text'] {
+    width: 80%;
+    border: 1px solid @greyb;
     font-size: 15px;
-    padding: 0 2px;
+    padding: 0px 5px;
+    outline: 0;
+
+    &:focus {
+      outline: 0;
+    }
   }
 }
 /* End Histories */

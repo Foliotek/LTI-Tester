@@ -490,7 +490,7 @@ body.histories .sidebar.histories {
   display: inline;
   font-size: 10px;
   font-weight: 600;
-  color: #777;
+  color: #777777;
   text-transform: uppercase;
 }
 .form-field label.custom-field {
@@ -511,7 +511,7 @@ body.histories .sidebar.histories {
 }
 .form-field i.fa-edit {
   cursor: pointer;
-  color: #777;
+  color: #777777;
 }
 .form-field.custom {
   padding-bottom: 10px;
@@ -565,18 +565,21 @@ pre {
   margin-top: 10px;
 }
 #histories ul li {
-  background: #fafafa;
   padding: 5px;
   margin-bottom: 5px;
-  border: 1px solid #e0e0e0;
+  border-bottom: 1px solid #bbbbbb;
 }
 #histories a {
   text-decoration: none;
-  color: #6dbbe0;
+  color: #777777;
+  font-size: 14px;
+  font-weight: 600;
 }
 #histories a.right {
   float: right;
   padding: 2px 5px 0 5px;
+  color: #6dbbe0;
+  font-weight: normal;
 }
 #histories .edit-field {
   display: none;
@@ -594,9 +597,15 @@ pre {
   font-size: 12px;
   text-transform: uppercase;
 }
-#histories input {
+#histories input[type='text'] {
+  width: 80%;
+  border: 1px solid #bbbbbb;
   font-size: 15px;
-  padding: 0 2px;
+  padding: 0px 5px;
+  outline: 0;
+}
+#histories input[type='text']:focus {
+  outline: 0;
 }
 /* End Histories */
 /* Experimental remove button */
