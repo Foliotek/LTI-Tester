@@ -30,33 +30,8 @@
 			}
 			return Mustache.render(formFieldTemplate, f);
 		}).join('');
+		
 		$("#field-holder").append(fieldHtml);
-		
-		
-		// $("#ls-load").on('click', function (ev) {
-		// 	ev.preventDefault();
-
-		// 	var custom_fields = (localStorage.getItem('tester_custom_fields') || '').split(',');
-		// 	custom_fields.forEach(function (f) {
-		// 		var exists = false;
-		// 		$(".custom-field").each(function(){
-		// 			if($(this).val() === f){
-		// 				exists = true;
-		// 				return;
-		// 			}
-		// 		});
-				
-		// 		if(!exists && f !== ''){					
-		// 			renderCustomField($form, f);
-		// 		}
-		// 	});
-
-		// 	Object.keys(localStorage).forEach(function (k) {
-		// 		var name = k.replace(F_PRE, '');
-		// 		$form.find("input[name='" + name +"']").val(localStorage.getItem(k)).trigger("change");
-		// 	});
-		// });
-		
 		$("#ls-clear").on('click', function (ev) {
 
             $form.find(".custom-field:not(:first)").each(function(){
@@ -224,8 +199,8 @@
 	};
 
 	app.form.fillValues = function (values) {
-		var $form = $("#form");
 		$("#custom-field-holder").html("");
+		var $form = $("#form");
 		renderCustomField($form);
 		Object.keys(values).forEach(function (k) {
 			var input = $form.find("[name=" + k + "]");

@@ -59,11 +59,9 @@
 			$.get(bitApiUrl).done(function (resp ){
 				if (resp.status_code === 200) {
                     $("#debug-link").html(resp.data.url);
-					console.log(resp.data.url);
 				}
 				else {
                     $("#debug-link").html("Sorry, we have reached our daily limit.");
-					console.error(resp.status_txt);
 				}
 			});
 		});
