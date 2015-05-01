@@ -51,20 +51,20 @@
                     </div> -->
                     <div class="secondary-btn">
                         <button type="button" id="ls-clear" title="Clear Form">
-                            <i class="fa fa-minus fa-lg"></i>
+                            <i class="fa fa-trash fa-lg"></i>
                         </button>
                     </div>
+                    <div class="secondary-btn">
+                    <button type="button" title="History" class="hist-btn">
+                        <i class="fa fa-history fa-lg"></i>
+                    </button>
+                </div>
                     <div class="secondary-btn">
                         <button type="submit" title="Submit">
                             <i class="fa fa-check fa-lg"></i>
                         </button>
                     </div>
                     <div class="btm">
-                        <div class="secondary-btn">
-                            <button type="button" title="History" class="hist-btn">
-                                <i class="fa fa-history fa-lg"></i>
-                            </button>
-                        </div>
                         <div class="secondary-btn">
                             <button type="button" title="Help" class="help-btn">
                                 <i class="fa fa-question fa-lg"></i>
@@ -185,7 +185,7 @@
             {{#histories}}
                 <li data-hist="{{id}}">
                     <a href="#" class="view main">{{name}}</a>
-                    <a href="#" class="view right remove fa fa-remove"></a>
+                    <a href="#" class="view right remove fa fa-trash"></a>
                     <a href="#" class="view right js-edit fa fa-pencil"></a>
                     <input type="text" value="{{name}}" class="edit-field js-hist-name" />
                     <a href="#" class="right edit-field cancel fa fa-remove"></a>

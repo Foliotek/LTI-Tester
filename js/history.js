@@ -28,7 +28,24 @@
 		render();
 	}
 	
+	function bindBodyClick(tog) {
+		var ev = 'click.history';
+		var $body = $('body');
+		if (tog) {
+			$body.on(ev, function (e) {
+				if ($(e.target).closest("li.editing").length === 0) {
+					el.find("li.editing").removeClass("editing");
+					bindBodyClick(false);
+				}
+			});
+		}
+		else {
+			$body.off(ev);
+		}
+	}
+
 	function bind() {
+
 		el.on('click', 'ul li a', function (ev) {
 			var li = $(ev.currentTarget).closest("[data-hist]"),
 				id = li.data("hist"),
@@ -42,8 +59,8 @@
 				update();
 			}
 			else if (lnk.is(".js-edit")) {
-				log(li);
 				li.addClass("editing");
+				bindBodyClick(true);
 			}
             else if (lnk.is(".js-save-name")) {
                 _requests[id].name = li.find(".js-hist-name").val();
