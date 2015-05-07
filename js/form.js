@@ -51,22 +51,26 @@
 			value: val
 		});
 		
+		var el = $(html);
 		if (scroll) {
 			if ($form.find('.form-field.custom').length > 0) {
-            	field = $(html).insertAfter($form.find(".form-field.custom:last"));
+            	el.insertAfter($form.find(".form-field.custom:last"));
 			}
 			else {
-				field = $(html).appendTo("#custom-field-holder");
+				el.appendTo("#custom-field-holder");
 			}
 			$form.find(".sidebar-inner").scrollTo(".form-field.custom:last");
 		}
 		else {
-            field = $(html).insertBefore($form.find(".form-field.custom:last"));
-			var input = $(field.find(".custom-field"));
+            el.insertBefore($form.find(".form-field.custom:last"));
+			var input = el.find(".custom-field");
 			input.changeElementType("label", input.val()).before('<i class="fa fa-edit"></i>');
 		}
         
-		return field;
+        if (field) {
+        	el.addClass('set');
+        }
+		return el;
 	}
 
 	function submitOauthForm($form) {
