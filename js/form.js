@@ -212,7 +212,7 @@
 				input.val(oauth_decode(values[k]));
 			}
 			else {
-				renderCustomField($form, k, values[k]);
+				renderCustomField($form, k, oauth_decode(values[k]));
 			}
 		});
 	};
