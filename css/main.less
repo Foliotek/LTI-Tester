@@ -68,6 +68,7 @@ section.intro {
   padding-top: 5%;
   font-size: 1.4em;
   font-weight: 300;
+  max-width: 100%;
 
   .help-btn {
     padding-top: 10px;
@@ -115,6 +116,7 @@ footer {
   top: 0;
   height: 100%;
   width: 300px;
+  max-width: 75%;
   border-right: 2px solid @blue;
   z-index: 1;
   .transform(translateX(-100%));
@@ -129,6 +131,7 @@ footer {
   }
 
   &.right {
+    display: none;
     left: auto;
     right: 0;
     border-right: 0;
@@ -217,6 +220,7 @@ body.open {
 body.advanced .sidebar.advanced,
 body.help .sidebar.help,
 body.histories .sidebar.histories {
+  display: block;
   .transform(translateX(0));
 }
 /* End Sidebar */
