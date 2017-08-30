@@ -35,6 +35,12 @@
 		app.form.fillValues(values);
 		$body.addClass('open');
 	});
+	$('.sidebar.main').on('click', function (ev) {
+		log($(ev.target));
+		if ($(ev.target).closest('.secondary-btn').length === 0) {
+			$body.removeClass('histories advanced help');
+		}
+	});
 
 	$("[title]").tooltipster({
     	theme: 'tooltipster-shadow',
