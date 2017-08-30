@@ -1,0 +1,211 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>LTI Tester - by Foliotek</title>
+
+        <meta name="description" content="This IMS LTI Tester gives you the ability to enter your oauth credentials and other LTI parameters for any LTI endpoint and test your integration.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Open Graph Properties -->
+        <meta property="og:title" content="LTI Tester - by Foliotek">
+        <meta property="og:url" content="http://foliotek.github.io/LTI-Tester">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="A easy to use tool that helps test your LTI integration with any LTI compatible site.">
+        <meta property="og:image" content="http://foliotek.github.io/LTI-Tester/img/og-img.png">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="icon" href="//foliotek.github.io/favico-64.png">
+
+        <link rel="stylesheet" href="./css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="./css/tooltipster.css">
+
+        <link rel="stylesheet" href="./css/all.min.css">
+    </head>
+    <body>
+        <div id="bg"></div>
+		<div class="sidebar main">
+        <form id="form" class="content">
+			<div class="sidebar-handle">
+                <div class="sh-inner">
+                    <button type="button" class="primary-btn" id="btn-config" title="Configure">
+                        <i class="fa fa-th-large fa-lg"></i>
+                    </button>
+                    <div class="secondary-btn">
+                        <button id="btn-advanced" title="Show advanced options">
+                            <i class="fa fa-gear fa-lg"></i>
+                        </button>
+                    </div>
+                    <div class="secondary-btn">
+                        <button type="button" id="ls-clear" title="Clear Form">
+                            <i class="fa fa-trash fa-lg"></i>
+                        </button>
+                    </div>
+                    <div class="secondary-btn">
+                    <button type="button" title="History" class="hist-btn">
+                        <i class="fa fa-history fa-lg"></i>
+                    </button>
+                </div>
+                    <div class="secondary-btn">
+                        <button type="submit" title="Submit">
+                            <i class="fa fa-check fa-lg"></i>
+                        </button>
+                    </div>
+                    <div class="btm">
+                        <div class="secondary-btn">
+                            <button type="button" title="Help" class="help-btn">
+                                <i class="fa fa-question fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-inner">
+                <div id="field-holder"></div>
+                <h5 class="custom-field-header">Custom Fields</h5>
+                <div id="custom-field-holder">
+                </div>
+            </div>
+        </form>
+		</div>
+        <div class="sidebar right advanced">
+            <div class="sidebar-inner">
+				<section>
+					<h2>Shareable Link</h2>
+					<pre id="debug-link"></pre>
+				</section>
+				<section>
+					<h2>Signature Base</h2>
+					<pre id="debug-signature-base"></pre>
+				</section>
+				<section>
+					<h2>Signature</h2>
+					<pre id="debug-signature"></pre>
+				</section>
+            </div>
+        </div>
+        <div class="sidebar right help">
+            <div class="sidebar-inner">
+                <section>
+                    <h2>What is this?</h2>
+                     <p>
+                        This is a simple tool to test connecting to third-party applications via LTI.
+                    </p>
+                </section>
+                <section>
+                    <h2>What is LTI?</h2>
+                    <p>
+                        <a href="http://www.imsglobal.org/toolsinteroperability2.cfm">Learning Tools Interoperability</a> is a specification developed by IMS Global Learning Consortium.  LTI establishes a standard way of integrating third-party application and services with educational environments.
+                    </p>
+                </section>
+                <section>
+                    <h2>How can I integrate with Foliotek?</h2>
+                    <p>
+                        See our <a href="http://help.foliotek.com/assessment/admin/integration/learning-tools-interoprability/connecting-to-foliotek-with-lti">Foliotek LTI Help</a> or you can use these <a href="#" class="test-btn">test values</a>.
+                    </p>
+                </section>
+                <section>
+                    <h2>Are you guys storing my information?</h2>
+                    <p>
+                        We only store your information in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">localStorage</a>.  Basically, it only exists inside your browser.  Even then, we don't store your secret.  If you're really concerned, you can view the code on <a href="http://github.com/foliotek/LTI-Tester">Github</a>.
+                    </p>
+                </section>
+                <section>
+                    <h2>What about the shareable links?</h2>
+                    <p>Those are generated using the <a href="http://dev.bitly.com/">Bitly API</a>, and even then, we don't store anything.  We just serialize the form, and append it to the query string.  Again, the secret isn't included in this information.</p>
+                </section>
+                <section>
+                    <h2>My custom fields aren't custom!?</h2>
+                    <p>
+                        We don't prepend "custom_" to the custom field keys. This way, you can send additional parameters defined by LTI that aren't provided by this tool.
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <div class="sidebar right histories">
+            <div class="sidebar-inner" id="histories">
+                <section>
+                    <h2>History</h2>
+                    <ul></ul>
+                </section>
+                <a href="#" class="clear-hist">Clear</a>
+            </div>
+        </div>
+  
+        <section class="intro">
+            <h1>LTI Tester</h1>
+            <p>Enter your data in the configuration on the left, and click the submit button to begin</p>
+
+            <button class="hero-btn">Get Started</button>
+            <br />
+            <br />
+            <a href="#" class="help-btn inline">What is this?</a>
+        </section>
+
+        <footer>
+            Built by <a href="http://www.foliotek.com">Foliotek</a> &copy; 2015 
+            &nbsp;&nbsp;This tool is open sourced on <a href="http://github.com/foliotek/LTI-Tester">Github</a>
+        </footer>
+
+        <!-- Templates -->
+        <script type="text/template" id="form-field-template">
+            <div class="form-field">
+            <label>{{field}}</label>
+            <input type="text" name="{{field}}" {{#required}}required{{/required}} />
+            </div>
+        </script>
+		<script type="text/template" id="custom-field-template">
+            <div class="form-field custom">
+                <input class="custom-field" type="text" placeholder="[Enter Key]" value="{{field}}" />
+                <div class="input-group">
+                <input class="custom-value" type="text" placeholder="[Enter Value]" name="{{field}}" value="{{value}}" />
+                <button type="button" class="btn-remove">
+                    <i class="fa fa-remove fa-lg"></i>
+                </button>
+            </div>
+        </script>
+        <script type="text/template" id="iframe-template">
+            <iframe id="LaunchFrame" name="LaunchFrame" class="LaunchFrame" width="100%" srolling="auto" frameborder="1" transparency></iframe>
+        </script>
+        <script type="text/template" id="histories-template">
+            {{#histories}}
+                <li data-hist="{{id}}">
+                    <a href="#" class="view main">{{name}}</a>
+                    <a href="#" class="view right remove fa fa-trash"></a>
+                    <a href="#" class="view right js-edit fa fa-pencil"></a>
+                    <input type="text" value="{{name}}" class="edit-field js-hist-name" />
+                    <a href="#" class="right edit-field cancel fa fa-remove"></a>
+                    <a href="#" class="right edit-field js-save-name fa fa-check"></a>
+                </li>
+            {{/histories}}
+        </script>
+        <script type="text/template" id="oauth-form-template">
+        <form method="{{method}}" action="{{{action}}}" target="{{target}}" enctype="application/x-www-form-urlencoded">
+
+            {{#fields}}
+                <input type="hidden" name="{{name}}" value="{{val}}" />
+            {{/fields}}
+        </form>
+        </script>
+        <!-- End Templates -->
+
+        <script>
+            var app = {};
+        </script>
+        <script src="./js/all.min.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-2398527-4', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>

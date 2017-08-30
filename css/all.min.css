@@ -1,0 +1,649 @@
+@import "//fonts.googleapis.com/css?family=Open+Sans:400,300,600";
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/* Variables */
+/* End Variables */
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  background: white;
+  overflow: hidden;
+}
+button,
+input {
+  font-family: "Open Sans", sans-serif;
+  outline: 0;
+}
+button {
+  font-weight: 300;
+}
+input {
+  color: #555555;
+}
+/* Main Page */
+h1 {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 1;
+}
+table {
+  font-size: 12px;
+}
+table th {
+  text-align: left;
+}
+section.intro {
+  width: 550px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 5%;
+  font-size: 1.4em;
+  font-weight: 300;
+  max-width: 100%;
+}
+section.intro .help-btn {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #247faa;
+}
+.hero-btn {
+  color: white;
+  border-radius: 5px;
+  font-size: 26px;
+  padding: 10px 15px;
+  background: #6dbbe0;
+  font-weight: 300;
+  border: 2px solid white;
+  cursor: pointer;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("//foliotek.github.io/images/home-bg-2.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  z-index: -1;
+}
+/* End Main Page */
+/* Sidebar */
+.sidebar {
+  background: white;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  max-width: 75%;
+  border-right: 2px solid #6dbbe0;
+  z-index: 1;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: transform 0.3s linear;
+  -moz-transition: transform 0.3s linear;
+  -ms-transition: transform 0.3s linear;
+  -o-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+.sidebar .sidebar-inner {
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+  position: relative;
+}
+.sidebar.right {
+  display: none;
+  left: auto;
+  right: 0;
+  border-right: 0;
+  border-left: 2px solid #6dbbe0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.sidebar .sidebar-handle {
+  width: 85px;
+  position: absolute;
+  top: 15px;
+  right: -85px;
+  bottom: 0;
+  text-align: center;
+}
+.sidebar .sh-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.sidebar .sidebar-handle .fa-lg {
+  font-size: 2.5em;
+}
+.sidebar .sidebar-handle button {
+  background: rgba(255, 255, 255, 0.8);
+  border: 0;
+  color: #6dbbe0;
+  cursor: pointer;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+  margin-bottom: 10px;
+  border: 2px solid #6dbbe0;
+  -webkit-transition: color .3s linear, backgroundColor .3s linear;
+  -moz-transition: color .3s linear, backgroundColor .3s linear;
+  -ms-transition: color .3s linear, backgroundColor .3s linear;
+  -o-transition: color .3s linear, backgroundColor .3s linear;
+  transition: color .3s linear, backgroundColor .3s linear;
+}
+.sidebar .sidebar-handle button:hover,
+.sidebar .sidebar-handle button.active {
+  background: #6dbbe0;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(100, 100, 100, 0.5);
+}
+.sidebar .btm {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
+.sidebar .sidebar-handle .secondary-btn {
+  -webkit-transition: transform 0.1s linear;
+  -moz-transition: transform 0.1s linear;
+  -ms-transition: transform 0.1s linear;
+  -o-transition: transform 0.1s linear;
+  transition: transform 0.1s linear;
+  -webkit-transform: translateX(-100px);
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -o-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+.sidebar .sh-inner > .secondary-btn:nth-child(2) {
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -ms-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.sidebar .sh-inner > .secondary-btn:nth-child(3) {
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  -ms-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.sidebar .sh-inner > .secondary-btn:nth-child(4) {
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -ms-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.sidebar .sh-inner > .secondary-btn:nth-child(5) {
+  -webkit-transition-delay: 0.6s;
+  -moz-transition-delay: 0.6s;
+  -ms-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+.sidebar .btm .secondary-btn {
+  -webkit-transition-delay: 0.8s;
+  -moz-transition-delay: 0.8s;
+  -ms-transition-delay: 0.8s;
+  -o-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+.sidebar.help {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.5;
+}
+body.open .sidebar.main {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+body.open .sidebar-handle .secondary-btn {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+body.advanced .sidebar.advanced,
+body.help .sidebar.help,
+body.histories .sidebar.histories {
+  display: block;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+/* End Sidebar */
+/* Form Stuff */
+#form {
+  height: 100%;
+}
+#custom-field-holder {
+  padding-bottom: 25px;
+}
+.custom-field-header {
+  margin: 15px 0 5px 0;
+  text-align: center;
+}
+.form-field {
+  margin-bottom: 7px;
+}
+.form-field label {
+  display: inline;
+  font-size: 10px;
+  font-weight: 600;
+  color: #777777;
+  text-transform: uppercase;
+}
+.form-field label.custom-field {
+  cursor: pointer;
+}
+.form-field input[type='text'] {
+  width: 95%;
+  border: 1px solid #bbbbbb;
+  font-size: 14px;
+  padding: 5px;
+  outline: 0;
+}
+.form-field input[type='text']:focus {
+  outline: 0;
+}
+.form-field input[type='text'].custom-field {
+  margin-bottom: 10px;
+}
+.form-field i.fa-edit {
+  cursor: pointer;
+  color: #777777;
+}
+.form-field.custom {
+  padding-bottom: 10px;
+}
+/* End Form Stuff */
+#LaunchFrame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  border: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+#LaunchFrame.loaded {
+  opacity: 1;
+  background: white;
+}
+section h2 {
+  color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 25px 0 10px 0;
+}
+section p {
+  margin-top: 0;
+}
+section:first-child h2 {
+  margin-top: 0;
+}
+pre {
+  background: #eaeaea;
+  color: #333;
+  white-space: normal;
+  word-break: break-all;
+  margin: 5px 0 10px 0;
+}
+.hide {
+  display: none;
+}
+/* Histories */
+#histories ul {
+  list-style: none;
+  padding: 0;
+  margin: -10px;
+  margin-top: 10px;
+}
+#histories ul li {
+  padding: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #bbbbbb;
+}
+#histories a {
+  text-decoration: none;
+  color: #777777;
+  font-size: 14px;
+  font-weight: 600;
+}
+#histories a.right {
+  float: right;
+  padding: 2px 5px 0 5px;
+  color: #6dbbe0;
+  font-weight: normal;
+}
+#histories .edit-field {
+  display: none;
+}
+#histories li.editing .edit-field {
+  display: inline-block;
+}
+#histories li.editing .view {
+  display: none;
+}
+#histories .clear-hist {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+#histories input[type='text'] {
+  width: 80%;
+  border: 1px solid #bbbbbb;
+  font-size: 15px;
+  padding: 0px 5px;
+  outline: 0;
+}
+#histories input[type='text']:focus {
+  outline: 0;
+}
+/* End Histories */
+/* Experimental remove button */
+.form-field.custom .input-group {
+  font-size: 0;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline;
+}
+.form-field.custom .input-group button.btn-remove {
+  background: #6dbbe0;
+  border: 1px solid #6dbbe0;
+  color: white;
+  cursor: pointer;
+  width: 31px;
+  height: 31px;
+  vertical-align: top;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.form-field.custom .input-group button.btn-remove:hover {
+  background: white;
+  color: #6dbbe0;
+}
+.form-field.custom.set .custom-value {
+  width: 82.5%;
+  border-right: none;
+}
+.form-field.custom.set button.btn-remove {
+  opacity: 1;
+  z-index: 1;
+}
